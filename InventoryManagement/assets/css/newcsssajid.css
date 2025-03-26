@@ -1,0 +1,33 @@
+﻿.abtncolr
+{
+    color:white !important;
+    text-decoration:none;
+    padding:5px 15px !important;
+}
+.floatright
+{
+    float:right !important;
+}
+.txtright
+{
+    text-align:right;
+}
+
+.tblcol-100px
+{
+    width:100px;
+  
+}
+.compulsory
+{
+    color:red;
+}
+.tblheadcolor
+{
+    background-color:#e0e0e0;
+    font-weight:800;
+}
+.notshow
+{
+    display:none
+}

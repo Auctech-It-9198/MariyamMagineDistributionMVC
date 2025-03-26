@@ -1,0 +1,12 @@
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\bin\Release\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\bin\Release\BOL(Business Objects Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Release\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Release\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Release\BOL(Business Objects Layer).pdb

@@ -1,0 +1,18 @@
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Release\DAL(Data Access Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Release\DAL(Data Access Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Release\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Release\BOL(Business Objects Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).csproj.AssemblyReference.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).csproj.CopyComplete
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Release\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Release\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Release\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Release\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).csproj.CopyComplete
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Release\DAL(Data Access Layer).pdb

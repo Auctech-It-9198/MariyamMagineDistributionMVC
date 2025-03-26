@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="page-content fade-in-up">
+
+
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Add New Country</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Index" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+            <div class="form-group">
+                <label>Enter Contry Name</label>
+                <input class="form-control" id="txtcountry" type="text">
+            </div>
+
+            <div class="form-group txtright">
+                <button class="btn  btn-primary" onclick="btnsave(this)"> Save</button>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+
+
+        })
+
+        function btnsave(this1)
+        {
+
+            var countryname = $('#txtcountry').val();
+            if (countryname.length <= 0)
+            {
+
+                $.toast({
+                    heading: 'Error',
+                    text: 'Enter Country Name',
+                    showHideTransition: 'fade',
+                    icon: 'error',
+                    position: 'top-right',
+                    stack: false
+                })
+            }
+
+        }
+    </script>
+    }

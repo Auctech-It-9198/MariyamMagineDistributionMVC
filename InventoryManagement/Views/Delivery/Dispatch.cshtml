@@ -1,0 +1,413 @@
+﻿
+@{
+    ViewBag.Title = "Dispatch";
+}
+<link href="~/assets/print/printcss.css" rel="stylesheet" />
+<style>
+    .notshow {
+        display: none;
+    }
+    .disblee {
+        background-color: #ed5757;
+        pointer-events: none;
+        color: white;
+    }
+    .disbleegreen {
+        background-color: #6fd944;
+        pointer-events: none;
+        color: white;
+    }
+    #tblsub tr td {
+        vertical-align: central;
+    }
+</style>
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Dispatch</div>
+            <div class="ibox-tools">
+                @*<a href="Add" class="btn btn-lg  btn-primary abtncolr">Add New Supply</a>*@
+            </div>
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Supply Vno</label>
+                        <input type="text" class="form-control input-sm" id="txtsupplyvno" />
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-2 mt-2">
+                    <div class="form-group">
+                        <input type="button" id="btnsearch" class="btn btn-primary mt-5" style="margin-top:20px!important;" value="Search" />
+                        <input type="button" id="btnreset" class="btn btn-danger mt-5 ml-2" style="margin-top:20px!important;" value="Reset" />
+                    </div>
+                </div>
+
+              
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="ibox">
+
+        <div class="ibox-body">
+
+            <div class="table-responsive" style="overflow-y:scroll">
+                <table class="table table-bordered" id="tblsub">
+                    <thead style="background-color:#e4e4e4">
+                        <tr>
+                            <th>SNo</th>
+                            <th>Order No</th>
+                            <th>Print Vno</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Print Status</th>
+                            <th>Dispatch Mode</th>
+                            <th>Remarks</th>
+                            <th>Rec Date</th>
+                            <th>Rec Status</th>
+                            <th>Rec Remakrs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        </div>
+
+
+
+
+
+        <div class="ibox">
+
+
+
+            <div class="ibox-body">
+                <div class="row">
+
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2">
+                        <input type="button" class="btn btn-success btn-block" value="Update" id="btnupdate" />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="~/assets/sweetalert/sweetalert.min.js"></script>
+    @section scripts{
+
+
+        <script>
+         var url = '';
+        var vtype = "Di";
+        $(function () {
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            var vno = getUrlVars()["vno"];
+            vtype = getUrlVars()["vtype"];
+
+            if (typeof vno !== "undefined") {
+
+                $("#txtsupplyvno").val(vno);
+                DisplayListforDispatch(vno);
+            }
+
+
+
+        });
+
+            // Read a page's GET URL variables and return them as an associative array.
+            function getUrlVars() {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+        //
+        $("#btnreset").on('click', function () {
+
+            $.toast({ heading: 'Warning', text: 'Record Reset ! ', icon: 'success', position: 'top-right', stack: false });
+            location.href = location.href;
+
+        })
+
+
+        // show
+        function DisplayListforDispatch(vno)
+        {
+
+            $('#tblsub tbody').empty();
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/DeliveryApi/DisplayListforDispatch?vno=" + vno,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    var rw = "";
+                    var rd = "";
+                    if (response.Data.length > 0) {
+
+                        for (var i = 0; i < data.length; i++)
+                        {
+                            
+
+                            if (data[i].printstatus == "0")
+                            {
+                                rw += "<tr class='disblee' disabled>";
+                            }
+                            else if (data[i].distatus == "1")
+                            {
+                                rw += "<tr class='disbleegreen' disabled>";
+                            }
+                            else
+                            {
+                                rw += "<tr>";
+                            }
+                           
+                            rw += "<td>" + parseInt(i + 1) + "</td>";
+                            rw += "<td>" + data[i].orderno + "</td>";
+                            rw += "<td>" + data[i].pvno + "</td>";
+                            rw += "<td>" + data[i].name + "</td>";
+                            rw += "<td>" + data[i].mobile + "</td>";
+
+                            if (data[i].printstatus == "0")
+                            {
+                                rw += "<td><span class='label label-danger''>Pending</span></td>";
+                            }
+                            else
+                            {
+                                rw += "<td><span class='label label-success''>Done</span></td>";
+                            }
+
+                           
+                            if (data[i].disptachmode == "0")
+                            {
+
+                                rw += "<td><select class='form-control input- sm' id='ddlmode' style='width:150px'><option value='0'>DispatchMode</option><option value='c'>Courries</option><option value='f'>Farwarder</option><option value='o'>Other</option></select></td>";
+
+                            }
+                            else
+                            {
+                                if (data[i].disptachmode == "c")
+                                {
+                                    rw += "<td><select class='form-control input- sm' id='ddlmode' style='width:150px'><option value='0'>DispatchMode</option><option value='c' selected>Courries</option><option value='f'>Farwarder</option><option value='o'>Other</option></select></td>";
+                                }
+
+                                if (data[i].disptachmode == "f") {
+                                    rw += "<td><select class='form-control input- sm' id='ddlmode' style='width:150px'><option value='0'>DispatchMode</option><option value='c' >Courries</option><option value='f' selected >Farwarder</option><option value='o'>Other</option></select></td>";
+                                }
+                                if (data[i].disptachmode == "o")
+                                {
+                                   
+                                    rw += "<td><select class='form-control input- sm' id='ddlmode' style='width:150px'><option value='0'>DispatchMode</option><option value='c' >Courries</option><option value='f'  >Farwarder</option><option value='o' selected>Other</option></select></td>";
+                                }
+                            }
+                          
+                            if (data[i].disremarks.length <=0 )
+                            {
+                                rw += "<td><input type='text' class='form-control' style='width:400px' value='' /></td>";
+                            }
+                            else
+                            {
+                                rw += "<td><input type='text' class='form-control' style='width:400px' value=" + data[i].disremarks +" /></td>";
+                            }
+
+                            if (data[i].dispdate == "1900-01-01")
+                            {
+                                rw += "<td><input type='date' class='form-control' /></td>";
+                            }
+                            else
+                            {
+                                rw += "<td><input type='date' class='form-control' value=" + data[i].dispdate +" /></td>";
+                            }
+
+
+                            if (data[i].distatus == "0")
+                            {
+                                rw += "<td><input type='checkbox' class='form-control' /></td>";
+                            }
+                            else
+                            {
+                                rw += "<td><input type='checkbox' class='form-control' checked /></td>";
+                            }
+
+                            if (data[i].disrecremarks.length <=0)
+                            {
+                                rw += "<td><input type='text' class='form-control' style='width:400px' value='' /></td>";
+                            }
+                            else
+                            {
+                                rw += "<td><input type='text' class='form-control' style='width:400px' value=" + data[i].disrecremarks +" /></td>";
+                            }
+                               
+                             
+                                rw += "<td class='notshow' >" + data[i].pid + "</td>";
+                                rw += "<td class='notshow' >" + data[i].mzid + "</td>";
+                                rw += "<td class='notshow' >" + data[i].mzname + "</td>";
+                                rw += "<td class='notshow' >" + data[i].mrid + "</td>";
+                                rw += "<td class='notshow' >" + data[i].mrname + "</td>";
+                                rw += "<td class='notshow' >" + data[i].msid + "</td>";
+                                rw += "<td class='notshow' >" + data[i].vno + "</td>";
+                                rw += "<td class='notshow' >" + data[i].lvno + "</td>";
+                                rw += "</tr>";
+                               
+                            
+
+                        }
+
+                        $('#tblsub tbody').append(rw);
+                    }
+
+
+
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+
+
+        }
+
+        // print
+        $("#btnsearch").on("click", function () {
+
+            var vno = $("#txtsupplyvno").val();
+            if (vno.length <= 0)
+            {
+                $.toast({ heading: 'Warning', text: 'Enter Vno ! ', icon: 'success', position: 'top-right', stack: false });
+                return false;
+            }
+
+            DisplayListforDispatch(vno);
+        });
+
+
+        // Update
+            $("#btnupdate").on("click", function () {
+
+
+                var Delivery = DataObj();
+
+                $.ajax({
+                    url: url + "/api/DeliveryApi/Dispatchpostadd",
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(Delivery),
+                    success: function (response) {
+                        if (response.Result == 'True')
+                        {
+                            $.toast({ heading: 'sucess', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+                            
+                            var vno = $("#txtsupplyvno").val();
+                            if (vno.length <= 0) {
+                                $.toast({ heading: 'Warning', text: 'Enter Vno ! ', icon: 'success', position: 'top-right', stack: false });
+                                return false;
+                            }
+
+                            DisplayListforDispatch(vno);
+                        }
+                        else
+                        {
+                            $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+
+                        }
+                    },
+                    complete: function (response)
+                    {
+
+                    },
+                    error: function (response) {
+
+                    }
+                });
+
+
+
+        });
+
+
+            function DataObj() {
+
+                var Deliver = new Array();
+               
+
+                $('#tblsub tbody tr').each(function (i) {
+                    var row = $(this);
+                    var Delivery = {};
+
+                    var pt = row.find("td:eq(5) span").text();
+
+                    Delivery.orderno = row.find("td").eq(1).html();
+                    Delivery.pvno = row.find("td").eq(2).html();
+                    Delivery.name = row.find("td").eq(3).html();
+                    Delivery.mobile = row.find("td").eq(4).html();
+
+                     Delivery.printstatus = row.find("td:eq(5) span").text();
+
+                   
+                        Delivery.disptachmode = row.find("td:eq(6) select").val();
+                        Delivery.disremarks = row.find("td:eq(7) input[type='text']").val();
+                        Delivery.dispdate = row.find("td:eq(8) input[type='date']").val();
+                        Delivery.distatus = row.find("td:eq(9) input[type='checkbox']").is(':checked');
+                        Delivery.disrecremarks = row.find("td:eq(10) input[type='text']").val();
+
+
+                 
+                   
+
+                    Delivery.pid = row.find("td").eq(11).html();
+                    Delivery.mzid = row.find("td").eq(12).html();
+                    Delivery.mzname = row.find("td").eq(13).html();
+                    Delivery.mrid = row.find("td").eq(14).html();
+                    Delivery.mrname = row.find("td").eq(15).html();
+                    Delivery.msid = row.find("td").eq(16).html();
+                    Delivery.vno = row.find("td").eq(17).html();
+                    Delivery.lvno = row.find("td").eq(18).html();
+
+                    Deliver.push(Delivery);
+
+
+                })
+
+                return Deliver;
+            }
+
+        </script>
+    }

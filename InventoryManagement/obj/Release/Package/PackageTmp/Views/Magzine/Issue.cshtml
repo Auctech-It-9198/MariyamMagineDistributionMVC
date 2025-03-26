@@ -1,0 +1,603 @@
+﻿@{
+    ViewBag.Title = "Add-Magzine";
+}
+@section css {
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+}
+<div class="page-content fade-in-up">
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Add New Released Magazine</div>
+            <div class="ibox-tools">
+                <a href="ReleaseList" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="hidden" id="hfReleaseId" />
+                    <input type="hidden" id="hfcimage" />
+                    <input type="hidden" id="hftimage" />
+                    <input type="hidden" id="hfpdf" />
+                    <div class="form-group">
+                        <label>Select Magazine <span class="compulsory">*</span></label>
+                        <select class="form-control input-sm" id="ddlMagzine"></select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Magazine Number</label>
+                        <input class="form-control" id="txtmcode" type="text" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>ISBN</label>
+                        <input class="form-control" id="txtISBN" type="text" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Publisher</label>
+                        <input class="form-control" id="txtpublisher" type="text" disabled>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Magazine Type</label>
+                        <input class="form-control" id="txtmtype" type="text" disabled>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Released Tittle <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtmrtitle" type="text">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Issue/Released Number <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtmrcode" type="text">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Released Month <span class="compulsory">*</span></label>
+                        <select class="form-control input-sm" id="ddlMonth">
+                            <option value="0">Select</option>
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Released Year <span class="compulsory">*</span></label>
+                        <select class="form-control input-sm" id="ddlYear">
+                            <option value="0">Select</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Display Released Tittle</label>
+                        <input class="form-control" id="txtdisplaymrtitle" type="text" disabled>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="~/assets/img/cover.jpg" class="img-responsive img-thumbnail" id="CoverImagePreview" />
+                    <input type="file" id="Coverfile" class="form-control" onchange="ShowCoverImagePreview(this);" />
+                </div>
+
+                <div class="col-md-4">
+                    <img src="~/assets/img/thumnail.jpg" class="img-responsive img-thumbnail" id="ThumnailImagePreview" />
+                    <input type="file" id="thumbfile" class="form-control" onchange="ShowThumnailImagePreview(this);" />
+                </div>
+
+                <div class="col-md-4">
+                    <img src="~/assets/img/pdf.jpg" class="img-responsive img-thumbnail" />
+                    <input type="file" id="pdffile" class="form-control" />
+                </div>
+                <div class="col-md-12 mt-4 mb-4">
+                    <div id="summernote"></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Date <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtdate" type="date">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Publish <span class="compulsory">*</span></label>
+                        <select class="form-control input-sm" id="ddlpublish">
+                            <option value="0">Select</option>
+                            <option value="P">Publish</option>
+                            <option value="U">Un-Publish</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>No of Copy(Stock) <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtstock" type="number">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*// Save *@
+    <div class="ibox">
+        <div class="ibox-body">
+            <div class="txtright">
+                <button class="btn btn-lg btn-primary" id="btnSave"> Save</button>
+                <button class="btn btn-success" type="button" id="btnUpdate" style="display:none;">
+                    <i class="fa fa-edit"></i> Update
+                </button>
+                <button type="button" id="btncancel" class="btn btn-danger"><i class="fa fa-remove"></i> Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        var url = '';
+        $(function ()
+        {
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            $('#summernote').summernote({ height: 200, placeholder: 'Enter Descriptions' });
+            bindMagzine();
+            
+        })
+        //
+        function bindMagzine() {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayMagzineList",
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlMagzine").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+                    var MRId = localStorage.getItem('MRId');
+                    var mode = localStorage.getItem("editmode");                    
+                    if (mode == "true") {                        
+                        getDatabyID(MRId);
+                    }
+                    else {
+                        clearTextBox();
+                    }
+                    
+                }
+            });
+        }
+        //
+        $('#ddlMagzine').on('change', function () {
+            getbyID($(this).val()); 
+            displaytitle();
+        });
+        $('#txtmrtitle,#txtmrcode,#ddlMonth,#ddlYear').on('change', function () {            
+            displaytitle();
+        });
+        function displaytitle() {
+            var magazine = $('#ddlMagzine :selected').text();
+            var releasetitle = $('#txtmrtitle').val();
+            var releasenumber = $('#txtmrcode').val();
+            var month = $('#ddlMonth :selected').text();
+            var year = $('#ddlYear :selected').val();
+            var disname = '';
+            if (magazine != "") {
+                disname += magazine;
+            }
+            if (releasetitle != "") {
+                disname += "/" + releasetitle;
+            }
+            if (releasenumber != "") {
+                disname += "/" + releasenumber;
+            }
+            if (month != "Select") {
+                disname += "/" + month;
+            }
+            if (year != "0") {
+                disname += "/" + year;
+            }
+            $('#txtdisplaymrtitle').val(disname);
+        }
+        //Function for getting the Data Based upon ID
+        function getbyID(MagzineId) {
+            $.ajax({
+                url: url + "/api/Magzine/GetMagzineDetails?MagzineId=" + MagzineId,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result.Data)
+
+                    if (result.Status == true) {
+                        var data = result.Data;
+                        $('#txtmcode').val(data[0].MagzineCode);
+                        $('#txtmtype').val(data[0].MagzineType == "H" ? "Hard-Copy" : "e-Copy");
+                        $('#txtpublisher').val(data[0].PublishName);
+                        $('#txtISBN').val(data[0].ISBN);
+
+                    }
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        //Cover Image Upload Preview
+        function ShowCoverImagePreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#CoverImagePreview').prop('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Thumnail Image Upload Preview
+        function ShowThumnailImagePreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#ThumnailImagePreview').prop('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Function for clearing the textboxes
+        function clearTextBox() {
+            $('#hfReleaseId').val("0");
+            $('#ddlMagzine').val('0');
+            $('#txtdisplaymrtitle').val('');
+            $('#txtmcode').val("");
+            $('#txtISBN').val("");
+            $('#txtpublisher').val("");
+            $('#txtmtype').val("");
+            $('#txtmrtitle').val("");
+            $('#txtmrcode').val("");
+            $('#hfpdf').val("~/assets/img/pdf.jpg");
+            $('#hfcimage').val("~/assets/img/cover.jpg");
+            $('#hftimage').val("~/assets/img/thumnail.jpg");
+            $('#ddlMonth').val("0");
+            $('#ddlYear').val("0");
+            $('#txtdate').val("");
+            $('#ddlpublish').val("0");
+            $('#txtstock').val('0');
+            $('#summernote').summernote('code', '');            
+            $('.ibox-title').html('Release New Magzine');
+            $('#btnSave').show();
+            $('#btnUpdate').hide();
+            $('#CoverImagePreview').prop('src', "../assets/img/cover.jpg");
+            $('#ThumnailImagePreview').prop('src', "../assets/img/thumnail.jpg");
+            localStorage.setItem('MRId', "");
+            localStorage.setItem('editmode', false);
+            
+        }
+
+        //Valdidation using jquery
+        function validate() {
+            var isValid = true;
+            if ($('#ddlMagzine :selected').val().trim() == "0") {
+                $.toast({
+                    heading: 'Warning', text: 'select Magzine !', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#ddlMagzine').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#txtmrtitle').val().trim() == "") {
+                $.toast({
+                    heading: 'Warning', text: 'Enter Magzine Title', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txtmrtitle').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#ddlMonth :selected').val().trim() == "0") {
+                $.toast({
+                    heading: 'Warning', text: 'select Month ! ', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#ddlMonth').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#ddlYear :selected').val().trim() == "0") {
+                $.toast({
+                    heading: 'Warning', text: 'select Year ! ', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#ddlYear').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#txtdate').val().trim() == "") {
+                $.toast({
+                    heading: 'Warning', text: 'Enter Released Date', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txtdate').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#ddlpublish :selected').val().trim() == "0") {
+                $.toast({
+                    heading: 'Warning', text: 'select publish ! ', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#ddlpublish').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#txtstock').val().trim() == "") {
+                $.toast({
+                    heading: 'Warning', text: 'of Copy(Stock) cannot blank ! ', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txtstock').focus();
+                isValid = false;
+                return false;
+            }
+            if ($('#txtstock').val().trim() == "0") {
+                $.toast({
+                    heading: 'Warning', text: 'Enter No of Copy(Stock)! ', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txtstock').focus();
+                isValid = false;
+                return false;
+            }
+            return isValid;
+        }
+
+        //Add Data Function
+        $('#btnSave').on('click', function () {
+            var res = validate();
+            if (res == false) {
+                return false;
+            }          
+            var obj = {
+                MagzineReleaseId: $('#hfReleaseId').val(),
+                MagzineId: $('#ddlMagzine :selected').val(),
+                MagzineName: $('#ddlMagzine option:selected').text(),
+                MagzineReleaseTitle: $('#txtmrtitle').val(),
+                DisplayTitle: $('#txtdisplaymrtitle').val(),
+                MagzineReleaseCode: $('#txtmrcode').val(),
+                ReleaseDate: $('#txtdate').val(),
+                ReleaseMonth: $('#ddlMonth :selected').val(),
+                ReleaseYear: $('#ddlYear :selected').val(),
+                Publish: $('#ddlpublish :selected').val() == "P" ? true : false,
+                PdfUrl: $('#hfpdf').val(),
+                VideoUrl: "",
+                CoverImageUrl: $('#hfcimage').val(),
+                Description: encodeURIComponent($('#summernote').summernote('code')),
+                ThumbnailUrl: $('#hftimage').val(),
+                Stock: $('#txtstock').val(),
+            };    
+            var formData = new FormData();
+            formData.append("data", JSON.stringify(obj));
+            var coverfiles = $("#Coverfile").get(0).files; 
+            if (coverfiles.length > 0) {
+                formData.append("Coverfile", coverfiles[0]);
+            }
+            var thumbfiles = $("#thumbfile").get(0).files;
+            if (thumbfiles.length > 0) {
+                formData.append("thumbfile", thumbfiles[0]);
+            }
+            var pdffiles = $("#pdffile").get(0).files;
+            if (pdffiles.length > 0) {
+                formData.append("pdffiles", pdffiles[0]);
+            }
+            //formData.append("pdf", "../assets/img/pdf.jpg");
+            //formData.append("cimage", "../assets/img/cover.jpg");
+            //formData.append("timage", "../assets/img/thumnail.jpg");            
+            $.ajax({
+                url: url + "/api/Magzine/ReleaseMagzine",
+                type: "POST",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,             
+                success: function (response) {
+                    if (response.Result == 'True') {
+                        $.toast({
+                            heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                            stack: false
+                        });
+                        location.href = "ReleaseList";
+                        clearTextBox();
+                    }
+                    else {
+                        $.toast({
+                            heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                            stack: false
+                        });
+                    }
+                },
+                error: function (response) {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                    console.log(response);
+                }
+            });
+        });
+
+        //Function for getting the Data Based upon ID
+        function getDatabyID(MRId) {
+            $.ajax({
+                url: url + "/api/Magzine/GetMagzineReleaseDetails?MRId=" + MRId,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result.Data)
+
+                    if (result.Status == true) {
+                        var data = result.Data;
+                        getbyID(data[0].MagzineId);
+                        $('#hfReleaseId').val(data[0].MagzineReleaseId);
+                        $('#ddlMagzine').val(data[0].MagzineId);
+                        //$('#txtmcode').val(data[0].MagzineId);
+                        //$('#txtISBN').val(data[0].MagzineId);
+                        //$('#txtpublisher').val(data[0].MagzineId);
+                        //$('#txtmtype').val(data[0].MagzineId);
+                        $('#txtmrtitle').val(data[0].MagzineReleaseTitle);
+                        $('#txtdisplaymrtitle').val(data[0].DisplayTitle);
+                        $('#txtmrcode').val(data[0].MagzineReleaseCode);
+
+                        var cfile = data[0].CoverImageUrl != "../assets/img/cover.jpg" ? data[0].CoverImageUrl : "~/assets/img/cover.jpg";
+                        var thfile = data[0].ThumbnailUrl != "../assets/img/thumnail.jpg" ? data[0].ThumbnailUrl : "~/assets/img/thumnail.jpg";
+                        $('#CoverImagePreview').prop('src', url + cfile);
+                        $('#ThumnailImagePreview').prop('src', url + thfile);
+
+
+                        $('#hfcimage').val(cfile);
+                        $('#hftimage').val(thfile);
+
+
+                        $('#hfpdf').val(data[0].PdfUrl);
+                        $('#ddlMonth').val(data[0].ReleaseMonth);
+                        $('#ddlYear').val(data[0].ReleaseYear);
+                        $('#txtdate').val(data[0].ReleaseDate);
+                       
+                        $('#ddlpublish').val(data[0].Publish == "True" ? "P" : "U");
+                        $('#txtstock').val(data[0].Stock);
+                        $('#summernote').summernote('code', decodeURIComponent(data[0].Description));
+                        $('.ibox-title').html('Edit  Released Magzine');
+                        $('#btnUpdate').show();
+                        $('#btnSave').hide();
+                    }
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+
+        //update Data Function
+        $('#btnUpdate').on('click', function () {
+            var res = validate();
+            if (res == false) {
+                return false;
+            }
+            var obj =
+            {
+                MagzineReleaseId: $('#hfReleaseId').val(),
+                MagzineId: $('#ddlMagzine :selected').val(),
+                MagzineName: $('#ddlMagzine option:selected').text(),
+                MagzineReleaseTitle: $('#txtmrtitle').val(),
+                DisplayTitle: $('#txtdisplaymrtitle').val(),
+                MagzineReleaseCode: $('#txtmrcode').val(),
+                ReleaseDate: $('#txtdate').val(),
+                ReleaseMonth: $('#ddlMonth :selected').val(),
+                ReleaseYear: $('#ddlYear :selected').val(),
+                Publish: $('#ddlpublish :selected').val() == "P" ? true : false,
+                PdfUrl: $('#hfpdf').val(),
+                VideoUrl: "",
+                CoverImageUrl: $('#hfcimage').val(),
+                Description: encodeURIComponent($('#summernote').summernote('code')),
+                ThumbnailUrl: $('#hftimage').val(),
+                Stock: $('#txtstock').val(),
+            };
+            var formData = new FormData();
+            formData.append("data", JSON.stringify(obj));
+
+            var coverfiles = $("#Coverfile").get(0).files;
+            if (coverfiles.length > 0) {
+                formData.append("Coverfile", coverfiles[0]);
+            }
+
+
+            var thumbfiles = $("#thumbfile").get(0).files;
+            if (thumbfiles.length > 0) {
+                formData.append("thumbfile", thumbfiles[0]);
+            }
+
+
+            var pdffiles = $("#pdffile").get(0).files;
+            if (pdffiles.length > 0) {
+                formData.append("pdffiles", pdffiles[0]);
+            }
+            $.ajax({
+                url: url + "/api/Magzine/UpdateReleaseMagzine",
+                type: "POST",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.Result == 'True') {
+                        $.toast({
+                            heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                            stack: false
+                        });
+                        location.href = "ReleaseList";
+                        clearTextBox();
+                    }
+                    else {
+                        $.toast({
+                            heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                            stack: false
+                        });
+                    }
+                },
+                error: function (response) {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                    console.log(response);
+                }
+            });
+        });
+
+
+    </script>
+}

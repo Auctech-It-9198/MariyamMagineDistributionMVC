@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Sale List";
+}
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Stock In list</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Add" class="btn btn-lg  btn-primary abtncolr">Add New Sale</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered" id="tbl_magzine">
+                    <thead>
+                        <tr>
+                            <th>SNo.</th>
+                            <th>Vno</th>
+                            <th>Date</th>
+                            <th>Party Name</th>
+                            <th>Net Amt</th>
+                            <th class="text-center"></th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/assets/sweetalert/sweetalert.min.js"></script>
+    <script>
+        var url = '';
+        var vtype = 'Sn';
+   
+        $(function () {
+            
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            DisplayList();
+        });
+        function DisplayList() {
+            $('#tbl_magzine').DataTable({
+                "sAjaxSource": "/Stockin/DisplayListPagewise?vtype=" + vtype,
+                "bServerSide": true,
+                "bDestroy": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "order": [[0, 'desc']],
+                "lengthChange": true,
+                responsive: true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'Bfrtip',
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                "language": {
+                    "emptyTable": "No record found.",
+                    "processing":
+                        '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                },
+                "columns": [
+                    {
+                        bSortable: false,
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    { "data": "vno"},
+                    { "data": "vdate" },
+                    { "data": "name" },
+                    { "data": "totalamt" },
+                   
+                    
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnEdit" class="btn btn-info btn-sm" title="Edit" data-vno=' + full.vno + '  href="javascript:;"><i class="fa fa-edit"></i></a>';
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnDelete" class="btn btn-danger btn-sm" title="Delete"  data-vno=' + full.vno + '  href="javascript:;"><i class="fa fa-remove"></i></a>';
+                        }
+                    }
+                ]
+            });
+        }
+        //
+        $('#tbl_magzine tbody').on('click', '#btnEdit', function ()
+        {
+            var vno = $(this).attr('data-vno');
+            localStorage.setItem("vno", vno);
+            localStorage.setItem("editmode", true);
+            window.location.href = "/Stockin/Add";
+        })
+        //function for deleting record
+        $('#tbl_magzine tbody').on('click', '#btnDelete', function ()
+        {
+            var vno = $(this).attr('data-vno');
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/DeliveryApi/DeleteSale?vno=" + vno + "&vtype=" + vtype,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response)
+                    {
+                        if (response.Result == 'True')
+                        {
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+                            $("#tbl_magzine").dataTable().fnDraw();
+                        }
+                        else
+                        {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+    </script>
+}
+

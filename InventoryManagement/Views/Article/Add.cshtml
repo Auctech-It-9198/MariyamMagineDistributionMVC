@@ -1,0 +1,605 @@
+﻿
+@{
+    ViewBag.Title = "Add-Article";
+}
+@section css {
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
+    <link rel="Stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css" />
+
+    <style>
+
+        .highlight {
+            background-color: lightgrey;
+            color: #03a9f3;
+            font-weight: bold;
+        }
+    </style>
+
+}
+
+<div class="page-content fade-in-up">
+
+
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Add New Article</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Index" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+            <div class="row">
+
+                <input type="hidden" id="hfarid" />
+                <input type="hidden" id="hfmrid" />
+                <input type="hidden" id="hfcimage" />
+                <input type="hidden" id="hftimage" />
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Search By Released Number / Tittle</label>
+                        <input class="form-control" id="txtreleased" type="text">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Issue Tittle</label>
+                        <input class="form-control" id="txtname" type="text" placeholder="Enter Name" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Article Number</label>
+                        <input class="form-control" id="txttittlecode" type="text" placeholder="Enter Title Code">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Article Tittle Name</label>
+                        <input class="form-control" id="txttittlename" type="text" placeholder="Enter Title Name">
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6">
+                    <img src="~/assets/img/main.jpg" class="img-responsive img-thumbnail" id="CoverImagePreview" />
+                    <input type="file" id="Coverfile" class="form-control" onchange="ShowCoverImagePreview(this);" />
+                </div>
+
+                <div class="col-md-6">
+                    <img src="~/assets/img/thumnail.jpg" class="img-responsive img-thumbnail" id="ThumnailImagePreview" />
+                    <input type="file" id="thumbfile" class="form-control" onchange="ShowThumnailImagePreview(this);" />
+                </div>
+
+
+
+                <div class="col-md-12 mt-4 mb-4">
+                    <div id="txtarticledesc"></div>
+                </div>
+
+
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input class="form-control" id="txtdate" type="date" >
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="form-control input-sm" id="ddlpublish">
+                            <option value="P">Publish</option>
+                            <option value="U">Un-Publish</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 mt-4 mb-4" style="display:none">
+
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input class="form-control" id="txturl" type="text" placeholder="Enter Whatsapp No">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    @*// Save *@
+    <div class="ibox">
+
+        <div class="ibox-body">
+
+            <div class="txtright">
+
+
+                <button class="btn btn-lg btn-primary" id="btnSave"> Save</button>
+                <button class="btn btn-success" type="button" id="btnUpdate" style="display:none;">
+                    <i class="fa fa-edit"></i> Update
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+@section scripts{
+
+
+ 
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+    <script>
+        var url = '';
+
+        $(function () {
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            $('#txtarticledesc').summernote({ height: 200, placeholder: 'Enter Descriptions' });
+
+            var arid = localStorage.getItem('arid');
+            var mode = localStorage.getItem("editmode");
+
+            if (mode == "true")
+            {
+
+                clearTextBox();
+                getDatabyID(arid);
+
+            }
+            clearTextBox();
+
+
+            // AutoComplete PartNo
+            $("[id$=txtreleased]").autocomplete({
+                source: function (request, response)
+                {
+                    $.ajax({
+                        url: url + "/api/Comman/getreleasedcode?SearchText=" + request.term,
+                        dataType: "json",
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data)
+                        {
+                          /*  console.log(data.Data);*/
+                            var dataval = data.Data;
+                          
+                            if (dataval.length > 0)
+                            {
+                                response($.map(dataval, function (item)
+                                {
+                                    return {
+
+                                        label: item.mrid,
+                                        value: item.title
+                                    }
+
+                                }))
+                            }
+                            else
+                            {
+                                response([{ label: 'No results found.', value: "" }]);
+                            }
+                        },
+                        error: function (response)
+                        {
+                            response([{ label: 'No results found.', value: "" }]);
+                        },
+                        failure: function (response)
+                        {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    });
+                },
+                select: function (e, i)
+                {
+                    /*console.log(i.item.value)*/
+
+                    if (i.value == "")
+                    {
+                      
+                        $('[id$=txtreleased]').val("");
+                        $("[id$=txtname]").val("");
+                        return false;
+
+                    }
+                    else
+                    {
+                        var myArray = i.item.value.split(",");
+                        var numb = myArray[0];
+                        /*alert(numb);*/
+                        var word = myArray[1];
+                       // $('[id$=txtreleased]').val(numb);
+                        $(this).val(numb);
+                        $("[id$=txtname]").val(word);
+                        $('[id$=hfmrid]').val(i.item.label);
+
+                        return false;
+                       
+                    }
+                },
+                minLength: 2,
+            }).data("ui-autocomplete")._renderItem = function (ul, item)
+                {
+                var regx = new RegExp('(' + this.term + ')', 'ig');
+                var label = item.value.replace(regx, "<span class='highlight'>" + this.term + "</span>");
+                return $("<li/>").data("ui-autocomplete-item", item).append($("<a>").html(label)).appendTo(ul);
+                };
+
+
+
+
+
+        })
+
+     
+
+
+
+        //Cover Image Upload Preview
+        function ShowCoverImagePreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#CoverImagePreview').prop('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Thumnail Image Upload Preview
+        function ShowThumnailImagePreview(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#ThumnailImagePreview').prop('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        //Function for clearing the textboxes
+        function clearTextBox() {
+            $('#hfarid').val("0");
+            $('#hfmrid').val('0');
+
+
+           
+            $('#txtreleased').val("");
+            $('#txtname').val("");
+            $('#txttittlecode').val("");
+            $('#txttittlename').val("");
+            $('#txturl').val("");
+                   
+            $('#hfcimage').val("../assets/img/main.jpg");
+            $('#hftimage').val("../assets/img/thumnail.jpg");
+
+            $('#txtarticledesc').summernote('code', '');
+
+
+            $('.ibox-title').html('Add New Article');
+            $('#btnSave').show();
+            $('#btnUpdate').hide();
+            $('#CoverImagePreview').prop('src', "../assets/img/main.jpg");
+            $('#ThumnailImagePreview').prop('src', "../assets/img/thumnail.jpg");
+
+            localStorage.setItem('arid', "");
+            localStorage.setItem('editmode', false);
+
+            //clear file upload
+            $("#Coverfile").val('');
+            $("#thumbfile").val('');
+
+
+            $('#ddlpublish').val("P");
+            $('#txtdate').val("");
+
+        }
+
+        //Valdidation using jquery
+        function validate()
+        {
+            var isValid = true;
+
+          
+
+            if ($('#txtreleased').val().trim() == "") {
+
+                $.toast({
+                    heading: 'Warning', text: 'Enter Released Code Title', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txtreleased').focus();
+                isValid = false;
+                return false;
+            }
+
+
+        
+
+          
+
+            if ($('#txttittlecode').val().trim() == "") {
+                $.toast({
+                    heading: 'Warning', text: 'Enter Tittle Code', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txttittlecode').focus();
+                isValid = false;
+                return false;
+            }
+
+            if ($('#txttittlename').val().trim() == "")
+            {
+                $.toast({
+                    heading: 'Warning', text: 'Enter Tittle Name', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txttittlename').focus();
+                isValid = false;
+                return false;
+            }
+
+
+            if ($('#txtdate').val().trim() == "")
+            {
+                $.toast({
+                    heading: 'Warning', text: 'Select Date', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                $('#txtdate').focus();
+                isValid = false;
+                return false;
+            }
+
+
+
+           
+            return isValid;
+        }
+
+
+
+        //save
+        //Add Data Function
+        $('#btnSave').on('click', function ()
+        {
+            var res = validate();
+            if (res == false)
+            {
+                return false;
+            }
+            var obj = {
+
+                arid: $('#hfarid').val(),
+                mrid: $('#hfmrid').val(),
+
+                atitlecode: $('#txttittlecode').val(),
+                artitle: $('#txttittlename').val(),
+                arurl: $('#txturl').val(),
+                CoverImageUrl: $('#hfcimage').val(),
+                descrp: encodeURIComponent($('#txtarticledesc').summernote('code')),
+                ThumbnailUrl: $('#hftimage').val(),
+                publishdate: $('#txtdate').val(),
+                ispublish: $('#ddlpublish :selected').val() == "P" ? true : false,
+
+
+            };
+            var formData = new FormData();
+
+            formData.append("data", JSON.stringify(obj));
+            var coverfiles = $("#Coverfile").get(0).files;
+            var thumbfiles = $("#thumbfile").get(0).files;
+
+            if (coverfiles.length > 0)
+            {
+                formData.append("Coverfile", coverfiles[0]);
+            }
+            if (thumbfiles.length > 0)
+            {
+                formData.append("thumbfile", thumbfiles[0]);
+            }
+
+            $.ajax({
+                url: url + "/api/Magzine/ArticleAdd",
+                type: "POST",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response)
+                {
+                    if (response.Result == 'True')
+                    {
+                        $.toast({
+                            heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                            stack: false
+                        });
+
+                        clearTextBox();
+                        location.href = "Index";
+                    }
+                    else
+                    {
+                        $.toast({
+                            heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                            stack: false
+                        });
+                    }
+                },
+                error: function (response) {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                    console.log(response);
+                }
+            });
+        });
+
+
+
+
+
+        //update
+        //Function for getting the Data Based upon ID
+        function getDatabyID(arid) {
+            $.ajax({
+                url: url + "/api/Magzine/GetMagzineArticleDetails?arid=" + arid,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result.Data)
+
+                    if (result.Status == true) {
+                        var data = result.Data;
+
+                        $('#hfarid').val(data[0].arid);
+                        $('#hfmrid').val(data[0].mrid);
+
+
+                        /*alert(data[0].releasedcode);*/
+
+                        $('#txtreleased').val(data[0].releasedcode);
+
+                        $('#txtname').val(data[0].releadetittle);
+
+
+                        $('#txttittlecode').val(data[0].atitlecode);
+                        $('#txttittlename').val(data[0].artitle);
+
+                        $('#txturl').val(data[0].arurl);
+
+                       
+                        $('#ddlpublish').val(data[0].ispublish == "True" ? "P" : "U");
+                        $('#txtdate').val(data[0].publishdate);
+
+
+                     
+
+                        $('#CoverImagePreview').prop('src', url + data[0].CoverImageUrl);
+                        $('#ThumnailImagePreview').prop('src', url + data[0].ThumbnailUrl);
+
+                        $('#hfcimage').val(data[0].CoverImageUrl);
+                        $('#hftimage').val(data[0].ThumbnailUrl);
+
+                        $('#txtarticledesc').summernote('code', decodeURIComponent(data[0].descrp));
+
+                        $('.ibox-title').html('Edit Magazine Article');
+                        $('#btnUpdate').show();
+                        $('#btnSave').hide();
+                    }
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+
+
+        //update Data Function
+        $('#btnUpdate').on('click', function () {
+            var res = validate();
+            if (res == false)
+            {
+                return false;
+            }
+            var obj =
+            {
+
+                arid: $('#hfarid').val(),
+                mrid: $('#hfmrid').val(),
+                atitlecode: $('#txttittlecode').val(),
+                artitle: $('#txttittlename').val(),
+                arurl: $('#txturl').val(),
+                CoverImageUrl: $('#hfcimage').val(),
+                descrp: encodeURIComponent($('#txtarticledesc').summernote('code')),
+                ThumbnailUrl: $('#hftimage').val(),
+                publishdate: $('#txtdate').val(),
+                ispublish: $('#ddlpublish :selected').val() == "P" ? true : false,
+
+
+
+            };
+            var formData = new FormData();
+            formData.append("data", JSON.stringify(obj));
+            var coverfiles = $("#Coverfile").get(0).files;
+            var thumbfiles = $("#thumbfile").get(0).files;
+            if (coverfiles.length > 0)
+            {
+                formData.append("Coverfile", coverfiles[0]);
+            }
+            if (thumbfiles.length > 0)
+            {
+                formData.append("thumbfile", thumbfiles[0]);
+            }
+            $.ajax({
+                url: url + "/api/Magzine/UpdateMagzineArticle",
+                type: "POST",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.Result == 'True') {
+                        $.toast({
+                            heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                            stack: false
+                        });
+                        clearTextBox();
+                        location.href = "Index";
+                    }
+                    else {
+                        $.toast({
+                            heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                            stack: false
+                        });
+                    }
+                },
+                error: function (response) {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                    console.log(response);
+                }
+            });
+        });
+
+
+    </script>
+}

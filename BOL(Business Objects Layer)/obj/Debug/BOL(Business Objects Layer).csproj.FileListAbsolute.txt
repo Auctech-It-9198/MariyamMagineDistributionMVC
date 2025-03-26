@@ -1,0 +1,54 @@
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+G:\3Ravi\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+D:\Maryam\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+D:\Maryam\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+C:\Project\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+C:\Project\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+C:\Project\Maryam\06-12-22\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+C:\Project\Maryam\06-12-22\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+C:\Project\Maryam\12-12-2022\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+C:\Project\Maryam\12-12-2022\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+H:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+H:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).dll
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\BOL(Business Objects Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.AssemblyReference.cache
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).csproj.CoreCompileInputs.cache
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).dll
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\BOL(Business Objects Layer)\obj\Debug\BOL(Business Objects Layer).pdb

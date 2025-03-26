@@ -1,0 +1,778 @@
+﻿
+@{
+    ViewBag.Title = "Subscriptions";
+}
+
+<style>
+    /*----------Jquery datatable cutome modify code-------------*/
+    .dt-buttons {
+        padding-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .dt-button {
+        border: none;
+        cursor: pointer;
+    }
+
+    .dt-buttons .dt-button {
+        padding: 5px 15px;
+        background: #23b7e5;
+        color: #262626;
+        margin-right: 3px;
+    }
+    
+    table.dataTable thead .sorting {
+        background-image: url("") !important;
+    }
+
+    table.dataTable thead .sorting_asc {
+        background-image: url("") !important;
+    }
+    .dt-button-collection .buttons-columnVisibility:first-child {
+        display: none !important;
+    }
+    table.dataTable thead .sorting_desc {
+        background-image: url("") !important;
+    }
+
+    .dt-button-collection .buttons-columnVisibility:nth-last-child(2) {
+        display: none !important;
+    }
+
+    .dt-button-collection .buttons-columnVisibility:last-child {
+        display: none !important;
+    }
+</style>
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Subscriptions list</div>
+            <div class="ibox-tools">              
+                <a href="Add" class="btn btn-lg  btn-primary abtncolr">Add New Subscriptions</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Magazine</label>
+                                <select class="form-control input-sm" id="ddlmagzine">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Tenure</label>
+                                <select class="form-control input-sm" id="ddltenure">
+                                    <option value="0">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>from Date</label>
+                                <input type="date" class="form-control input-sm" id="txtfromdate" />
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>To Date</label>
+                                <input type="date" class="form-control input-sm" id="txttodate" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct Country</label>
+                                <select class="form-control input-sm" id="ddcountry">
+                                    <option value="0">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct State</label>
+                                <select class="form-control input-sm" id="ddlstate">
+                                    <option value="0">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct City</label>
+                                <select class="form-control input-sm" id="ddlcity">
+                                    <option value="0">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct Member Type</label>
+                                <select class="form-control input-sm" id="ddlmtype">
+                                    <option value="0">All</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Selct Gender</label>
+                                <select class="form-control input-sm" id="ddlgender">
+                                    <option value="0">ALL</option>
+                                    <option value="m">Male</option>
+                                    <option value="f">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Exp- Month</label>
+                                <select class="form-control input-sm" id="ddlmonth">
+                                    <option value="0">ALL</option>
+                                    <option value="January">Jan</option>
+                                    <option value="February">Feb</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">Novebmer</option>
+                                    <option value="December">December</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Select Yeer</label>
+                                <select class="form-control input-sm" id="ddlyear">
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                    <option value="2032">2032</option>
+                                    <option value="2035">2035</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <div class="form-group" style="display:none">
+                                <label></label>
+
+                                <div class="check-list">
+                                    <label class="ui-checkbox ui-checkbox-success pt-3">
+                                        <input type="checkbox" id="chk_deactive">
+                                        <span class="input-span"></span>De-Active
+                                    </label>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="button" id="btnsearch" class="btn btn-primary mt-4" style="margin-top:20px!important;" value="Search" />
+                                <input type="button" id="btnreset" class="btn btn-danger mt-4" style="margin-top:20px!important;" value="Reset" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="printbar" class="float-right"></div>
+                </div>
+            </div>
+            <div class="row">
+                <table id="tbl_member" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Membership Code</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Magazine</th>
+                            <th>From-Date</th>
+                            <th>Grace Periods</th>
+                            <th>Exp-Date</th>
+                            <th>Exp-Month</th>
+                            <th>Status</th>
+                            <th class="text-center"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+         
+            <div class="row">
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                              
+                                <div class="container">
+                                    <div class="row">
+
+                                        <div class="col-md-4">
+                                            <a href="#" id="areveiw" class="btn btn-block btn-primary">Renew</a>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <a href="#" id="aregrace" class="btn btn-block btn-success">Add Grace</a>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <a href="#" id="areDeactive" class="btn btn-block btn-danger">Deactive</a>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+</div>
+<script src="~/assets/sweetalert/sweetalert.min.js"></script>
+
+@section scripts{
+
+    <script>
+       var url = '';
+   
+        $(function () {
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            localStorage.setItem('mscode', "");
+            localStorage.setItem('editmode', false); 
+            bindMagazine();
+            bindCountry(); 
+            bindMemberType();
+            DisplayList('0', '0', '0', '0', '0', '0', '0', '0', '0', '2018-10-1', '2030-12-31','0','0');
+
+
+
+            $("#ddlmagzine").change(function () {
+
+              
+                var mzid = $("#ddlmagzine").val();
+                bindtenure(mzid);
+
+
+            });
+
+
+
+        });
+        function DisplayList(cid, sid, cityid, isdeactive, isforworder, mtype, gender, mzid, tenure, fromdate, todate, expmonth, expyear)
+        {
+            var table = $('#tbl_member').DataTable({
+                "sAjaxSource": "/Subscription/DisplayListPagewise?cid=" + cid + "&sid=" + sid + "&cityid=" + cityid + "&deactive=" + isdeactive + "&forworder=" + isforworder + "&mtype=" + mtype + "&gender=" + gender + "&mzid=" + mzid + "&tenure=" + tenure + "&fromdate=" + fromdate + "&todate=" + todate + "&expmonth=" + expmonth + "&expyear=" + expyear,
+                "bServerSide": true,
+                "bDestroy": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "order": [[0, 'desc']],
+                "lengthChange": true,
+                responsive: true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                /*dom: 'Bfrtip',*/
+                dom: 'lBfrtip',
+                buttons: [
+                   
+                    {
+                        extend: 'pdfHtml5',
+                        title: 'Maryam Magazine',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3]
+                        },
+                        pageSize: 'A4',
+                        customize: function (doc) {
+                            doc.styles.tableHeader.alignment = 'left';
+                            doc.defaultStyle.fontSize = 8; //2, 3, 4,etc
+                            doc.styles.tableHeader.fontSize = 10; //2, 3, 4, etc
+                            doc.content[1].table.widths = ['10%', '50%', '20%', '20%'];
+                            //doc.content.splice(1, 0, {
+                            //    margin: [0, 0, 0, 12],
+                            //    alignment: 'center',
+                            //    image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAuCAYAAACxkOBzAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTEzRTdEQkUxM0U1MTFFNTg3REFBQzExQTNBQTE1MTgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTEzRTdEQkYxM0U1MTFFNTg3REFBQzExQTNBQTE1MTgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5MTNFN0RCQzEzRTUxMUU1ODdEQUFDMTFBM0FBMTUxOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5MTNFN0RCRDEzRTUxMUU1ODdEQUFDMTFBM0FBMTUxOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pmq0p78AAArESURBVHjarFl5bBTn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'
+                            //});
+                            doc.content.splice(1, 0, {
+                                margin: [0, 0, 0, 12],
+                                alignment: 'center',
+                                fontSize: '10',
+                                text: 'Subscriptions List'
+                            });
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        alignment: "center",
+                        exportOptions: {
+                            columns: [0, 1, 2, 3]
+                        },
+                        autoPrint: true,
+                        title: 'Maryam Magazine',
+                        //For repeating heading.
+                        repeatingHead: {
+                            logo: '../assets/images/vmeds-logo.png',
+                            logoPosition: 'right',
+                            logoStyle: '',
+                            title: '<h3>All Subscriber List</h3>'
+                        }
+                    }
+
+                ],
+                "language": {
+                    "emptyTable": "No record found.",
+                    "processing":
+                        '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                },
+                "columns": [
+                    {
+                        bSortable: false,
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    { "data": "mscode" },
+                    { "data": "Name" },
+                    { "data": "Mobile" },
+                   
+                    { "data": "mzname" },
+                    { "data": "fromdate" },
+                    { "data": "greaseperiods" },
+                    { "data": "todate" },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                           
+                            return '<span class="label label-success">' + full.expmonth +'</span>';
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            if (full.substatus == "1") {
+                                return '<span class="label label-success">Active</span>';
+                            }
+                            else {
+                                return '<span class="label label-danger">De-Active</span>';
+                            }
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta)
+                        {
+                            return '<a id="btnEdit" class="btn btn-info btn-sm" title="Edit" data-sbid=' + full.sbid + ' data-mzid=' + full.mzid + ' data-msid=' + full.msid + ' data-name=' + encodeURIComponent(full.Name) + '  href="javascript:;"><i class="fa fa-edit"></i></a>';
+                        }
+                    }
+                   
+                ]
+            });
+            table.buttons().container().appendTo($('#printbar'));
+        }
+       
+
+        //function for deleting record
+        $('#tbl_member tbody').on('click', '#btnDelete', function () {
+            var mscode = $(this).attr('data-mscode');
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/SubscriberApi/Delete?mscode=" + mscode,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.Result == 'True') {
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+                            $("#tbl_member").dataTable().fnDraw();
+                        }
+                        else {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+        //
+        function bindMagazine()
+        {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+
+
+                        var s = '<option value="0">Select All Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+        //
+        function bindtenure(mzid) {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinetenure?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">All</option>';
+
+                       
+
+                        for (var i = 0; i < data.length; i++) {
+
+                            var splitsmonth = data[i].Tenure.split("-");
+                            var Tenurename = splitsmonth[0] + "-" + "Month";
+                            var Tenuremonth = splitsmonth[0];
+
+                            s += '<option value="' + Tenuremonth + '">' + Tenurename + '</option>';
+                        }
+                        $("#ddltenure").html(s);
+                    }
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        //
+        function bindCountry() {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayCountryList",
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].CountryId + '">' + data[i].CountryName + '</option>';
+                        }
+                        $("#ddcountry").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+                    
+                }
+            });
+        }
+
+        //
+        $("#ddcountry").on('change', function () {
+            bindState($(this).val());  
+        });
+
+        function bindState(countryid) {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayStateList?cid=" + countryid,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].StateId + '">' + data[i].StateName + '</option>';
+                        }
+                        $("#ddlstate").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+
+        $("#ddlstate").on('change', function () {
+            bindCity($("#ddcountry :selected").val(), $(this).val());
+        });
+
+        function bindCity(countryid,stateid) {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayCityList?cid=" + countryid + "&sid=" + stateid,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].CityId + '">' + data[i].CityName + '</option>';
+                        }
+                        $("#ddlcity").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+        //
+        function bindMemberType() {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayMemberTypeList",
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MemberTypeId + '">' + data[i].MemberTypeName + '</option>';
+                        }
+                        $("#ddlmtype").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+
+                }
+            });
+        }
+        //
+        $("#btnsearch").on('click', function () {
+
+            var cid = 0;
+            var sid = 0;
+            var city = 0;
+            var active = 0;
+            var forwarder = 0;
+            var mtype = 0;
+            var gender = 0;
+            var mzid = 0;
+            var tenure = 0;
+            var fromdate = '2018-01-01';
+            var todate = '2030-01-01';
+            var expmonth = '0';
+            var expyear = '0';
+
+
+            mzid = $("#ddlmagzine").val();
+            tenure = $("#ddltenure").val();
+
+            if ($("#txtfromdate").val() != "")
+            {
+                fromdate = $("#txtfromdate").val();
+            }
+
+            if ($("#txttodate").val() != "")
+            {
+                todate = $("#txttodate").val();
+            }
+
+            if ($("#ddlmonth").val() != "0")
+            {
+                expmonth = $("#ddlmonth").val();
+            }
+
+            if ($("#ddlyear").val() != "0")
+            {
+                expyear = $("#ddlyear").val();
+            }
+
+
+
+            if (typeof $("#ddcountry :selected").val() !== "undefined") {
+
+                cid = $("#ddcountry :selected").val();
+            }
+            if (typeof $("#ddlstate :selected").val() !== "undefined")
+            {
+                sid = $("#ddlstate :selected").val();
+            }
+            if (typeof $("#ddlcity :selected").val() !== "undefined")
+            {
+                city = $("#ddlcity :selected").val();
+            }
+            if (typeof $("#ddlmtype :selected").val() !== "undefined")
+            {
+                mtype = $("#ddlmtype :selected").val();
+            }
+            if (typeof $("#ddlgender :selected").val() !== "undefined")
+            {
+                gender = $("#ddlgender :selected").val();
+            }
+
+
+
+            DisplayList(cid, sid, city, active, forwarder, mtype, gender, mzid, tenure, fromdate, todate, expmonth, expyear);
+        });
+      
+
+        $("#btnreset").on('click', function () {
+            location.href = location.href;
+        });
+
+
+
+        //open model
+
+        $('#tbl_member tbody').on('click', '#btnEdit', function (e) {
+            e.preventDefault();
+           
+
+            var sbid = $(this).attr('data-sbid');
+            var mzid = $(this).attr('data-mzid');
+            var msid = $(this).attr('data-msid');
+            var Name = decodeURIComponent($(this).attr('data-name'));
+           
+            
+
+            $("#myModal .modal-title").html(Name);
+
+            $("#areveiw").attr("href", "Renew?sbid=" + sbid + "&mzid=" + mzid + "&msid=" + msid);
+            $("#aregrace").attr("href", "Grace?sbid=" + sbid + "&mzid=" + mzid + "&msid=" + msid);
+           // $("#aredeactive").attr("href", "Deactive?sbid=" + sbid + "&mzid=" + mzid + "&msid=" + msid);
+
+            $("#myModal").modal("show");
+            
+        
+        })
+
+
+    </script>
+}

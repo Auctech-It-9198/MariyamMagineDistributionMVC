@@ -1,0 +1,340 @@
+﻿
+@{
+    ViewBag.Title = "PrintLabel";
+}
+
+<style>
+    .notshow {
+        display: none;
+    }
+</style>
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+
+<div class="page-content fade-in-up">
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Print List</div>
+            <div class="ibox-tools">
+                <a href="NewPrinting" class="btn btn-lg  btn-primary abtncolr">Add New Print</a>
+            </div>
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Magazine</label>
+                        <select class="form-control input-sm" id="ddlmagzine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Released Magazine</label>
+                        <select class="form-control input-sm" id="ddlrelmagazine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label style="color:white">Show Detials</label>
+                        <input type="button" id="btnreset" class="btn btn-block btn-info" value="Save" />
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="ibox">
+
+       
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered" id="tbl_article">
+                        <thead>
+                            <tr>
+                                <th>SNo.</th>
+                                <th>Vno</th>
+                                <th>Print Vno</th>
+                                <th>Magazine Name</th>
+                                <th>Release Title</th>
+                                <th>Date</th>
+                                <th>Print Qty</th>
+                                <th class="text-center"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+ 
+
+
+
+</div>
+
+@section scripts{
+    <script src="~/assets/sweetalert/sweetalert.min.js"></script>
+    <script>
+        var url = '';
+        var mzid = '0';
+        var mrid = '0';
+        $(function () {
+
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            DisplayListprint('0', '0');
+            bindMagazine();
+           
+
+
+            // select event Magazine ddl
+            $("#ddlmagzine").change(function ()
+            {
+                var mzid = $("#ddlmagzine").val();
+                bindReleasedMagazine(mzid);
+
+            });
+
+        });
+
+
+        // select event Magazine ddl
+        $("#ddlmagzine").change(function () {
+
+            var mzid = $("#ddlmagzine").val();
+            bindReleasedMagazine(mzid);
+
+        });
+        function DisplayListprint(mzid, mrid) {
+
+            $('#tbl_article').DataTable({
+                "sAjaxSource": "/Delivery/DisplayPrinlist?mzid=" + mzid + "&mrid=" + mrid,
+                "bServerSide": true,
+                "bDestroy": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "order": [[0, 'desc']],
+                "lengthChange": true,
+                responsive: true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'Bfrtip',
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                "language": {
+                    "emptyTable": "No record found.",
+                    "processing":
+                        '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                },
+                "oLanguage": {
+                    "sSearch": "Search"
+                },
+                "columns": [
+                    {
+                        bSortable: false,
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    { "data": "vno" },
+                    { "data": "pvno" },
+                    { "data": "mzname"},
+                    { "data": "mrname", width:300 },
+                    { "data": "vdate" },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+
+                            return '<span class="label label-info">' + full.printcount + '</span>';
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnDelete" class="btn btn-danger btn-sm" title="Delete" data-pvno=' + full.pvno + ' data-vno=' + full.vno + ' href="javascript:;"><i class="fa fa-remove"></i></a>';
+                        }
+                    }
+                ]
+            });
+        }
+
+
+        //bind Magazine
+        function bindMagazine() {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+
+
+                        var s = '<option value="0">Select All Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        //bind released Magazine
+        function bindReleasedMagazine(mzid)
+        {
+
+            $("#ddlrelmagazine").html("");
+
+
+            $.ajax({
+                url: url + "/api/Comman/Releasedmagazine?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response)
+                {
+
+
+                    try
+                    {
+                        var data = response.Data;
+                        if (response.Data.length > 0)
+                        {
+
+                            var s = '<option value="0">All</option>';
+                            for (var i = 0; i < data.length; i++)
+                            {
+                                s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                            }
+                            $("#ddlrelmagazine").html(s);
+
+                        }
+                    }
+                    catch (err)
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                    }
+
+
+                },
+                error: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                },
+                failure: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                }
+            });
+
+        }
+
+
+
+
+
+        $("#btnreset").on('click', function () {
+
+            var mzid = $("#ddlmagzine").val();
+            var mrid = $("#ddlrelmagazine").val();
+
+            DisplayListprint(mzid, mrid);
+
+
+        })
+
+
+      
+
+
+        //function for deleting record
+        $('#tbl_article tbody').on('click', '#btnDelete', function () {
+            var pvno = $(this).attr('data-pvno');
+            var vno = $(this).attr('data-vno');
+
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/DeliveryApi/DeletePrintRecord?vno=" + vno + "&pvno=" + pvno,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.Result == 'True') {
+
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+                            $("#tbl_article").dataTable().fnDraw();
+                        }
+                        else {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+
+    </script>
+}

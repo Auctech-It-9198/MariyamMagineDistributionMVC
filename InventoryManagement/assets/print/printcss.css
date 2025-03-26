@@ -1,0 +1,56 @@
+﻿#tblprint 
+{
+    width: 100%;
+    background-color:white;
+   
+}
+
+#tblprint tr {
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+    #tblprint tr td {
+        padding: 3px;
+        width: 33%;
+        page-break-inside: avoid;
+    }
+
+.subname {
+    width: 100%;
+    border: 3px solid #e5e5e5;
+    background-color: white;
+    padding: 5px;
+    font-weight: 600;
+    line-height: 0.7;
+}
+
+.pp5 {
+    line-height: 1.5;
+   
+}
+
+
+
+
+
+.prinarea {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+}
+
+.subname2 {
+    width: 31%;
+    border: 1px solid #f3cdcd;
+    background-color: #e5e5e5;
+    padding: 5px;
+    font-weight: 600;
+    line-height: 0.7;
+    page-break-inside: avoid;
+    margin:1%;
+}
+
+

@@ -1,0 +1,872 @@
+﻿
+@{
+    ViewBag.Title = "Add-Subscriber";
+}
+@section css {
+    <link rel="Stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css" />
+
+    <style>
+
+        .highlight {
+            background-color: lightgrey;
+            color: #03a9f3;
+            font-weight: bold;
+        }
+    </style>
+
+}
+<div class="page-content fade-in-up">
+    <div class="ibox">
+        <div class="ibox-head">
+            <div id="ibox-title" class="ibox-title">Add New Subscriber (Member)</div>
+            <div class="ibox-tools">
+                <a href="Index" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Membership Code</label>
+                        <input class="form-control" id="txtmembercode" type="text" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Name<span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtname" type="text" placeholder="Enter Name">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Mobile No <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtmobile" type="text" placeholder="Enter Mobile No">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Whats App No</label>
+                        <input class="form-control" id="txtWhatsAppNo" type="text" placeholder="Enter Whatsapp No">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Date of Birth No</label>
+                        <input class="form-control" id="txtDOB" type="date" placeholder="Enter Date of Birth">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input class="form-control" id="txtemail" type="text" placeholder="Enter Email">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Education</label>
+                        <input class="form-control" id="txteducation" type="text" placeholder="Enter Education">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Job Profile</label>
+                        <input class="form-control" id="txtjobprofile" type="text" placeholder="Job Profile">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Gender <span class="compulsory">*</span></label>
+                        <select class="form-control input-sm" id="ddlgender">
+                            <option value="0">Select</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="txtage" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Marital Status</label>
+                        <select class="form-control input-sm" id="ddlMarital">
+                            <option value="0">Select</option>
+                            <option value="Married">Married </option>
+                            <option value="UnMarried">UnMarried</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Type<span class="compulsory">*</span></label>
+                        <select class="form-control input-sm" id="ddlmtype">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-1">
+                    <div class="form-group">
+                        <label>Is Forwarder</label>
+                        <div class="check-list">
+                            <label class="ui-checkbox ui-checkbox-success pt-2">
+                                <input type="checkbox" id="chkForwarder">
+                                <span class="input-span"></span>Forwarder
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label> Select Parent</label>
+                        <input type="hidden" id="hfParent" />
+                        <input type="text" id="txtparent" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-2 mt-1">
+                    <div class="form-group">
+                        <label>Is De-Active</label>
+                        <div class="check-list">
+                            <label class="ui-checkbox ui-checkbox-success pt-2">
+                                <input type="checkbox" id="chkDeActive">
+                                <span class="input-span"></span>De-Active
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Discount</label>
+                        <input class="form-control" id="txtdiscount" type="text" placeholder="Enter Discount">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    @*// Address*@
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Address Details</div>
+            <div class="ibox-tools">
+                <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+        <div class="ibox-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Country <span class="compulsory">*</span></label>
+                        <input type="hidden" id="hfCountryId" />
+                        <input type="text" id="txtcountry" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>State <span class="compulsory">*</span></label>
+                        <input type="hidden" id="hfStateId" />
+                        <input type="text" id="txtstate" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>City <span class="compulsory">*</span></label>
+                        <input type="hidden" id="hfCityId" />
+                        <input type="text" id="txtcity" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Area <span class="compulsory">*</span></label>
+                        <input type="hidden" id="hfAreaId" />
+                        <input type="text" id="txtarea" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Pincode <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtpincode" type="text" placeholder="Enter Pincoe">
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Land Marks</label>
+                        <input class="form-control" id="txtlandmark" type="text" placeholder="Enter Land Marks">
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Local Address <span class="compulsory">*</span></label>
+                        <input class="form-control" id="txtlocaladdress" type="text" placeholder="Enter Address">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @*// Save *@
+    <div class="ibox">
+        <div class="ibox-body">
+            <div class="txtright">
+                <button class="btn btn-lg btn-primary" id="btnSave"> Save</button>
+                <button class="btn btn-success" type="button" id="btnUpdate" style="display:none;">
+                    <i class="fa fa-edit"></i> Update
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js"></script>
+
+
+<script>
+        var url = '';
+    $(function () {
+        url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+        GenerateNewVno();
+        bindMemberType();        
+        // AutoComplete PartNo
+        $("[id$=txtcountry]").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url + "/api/Comman/SearchCountry?SearchText=" + request.term,
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        /*console.log(data.Data);*/
+                        var dataval = data.Data;
+                        if (dataval.length > 0) {
+                            response($.map(dataval, function (item) {
+                                return {
+                                    //label: item.PartNo, value: item.PartNo
+                                    label: item.CountryId,
+                                    value: item.CountryName
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    },
+                    error: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    },
+                    failure: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.value)
+                if (i.value == "") {
+                    $('[id$=txtcountry]').val("");
+                    $('[id$=hfCountryId]').val("");
+                    return false;
+                } else {
+                    $("[id$=txtcountry]").val(i.item.label);
+                    $("[id$=hfCountryId]").val(i.item.label);
+                }
+            },
+            minLength: 2,
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var regx = new RegExp('(' + this.term + ')', 'ig');
+            var label = item.value.replace(regx, "<span class='highlight'>" + this.term + "</span>");
+            return $("<li/>").data("ui-autocomplete-item", item).append($("<a>").html(label)).appendTo(ul);
+        };
+
+        // AutoComplete State
+        $("[id$=txtstate]").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url + "/api/Comman/SearchState?SearchText=" + request.term + "&cid=" + $("#hfCountryId").val(),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        /*console.log(data.Data);*/
+                        var dataval = data.Data;
+                        if (dataval.length > 0) {
+                            response($.map(dataval, function (item) {
+                                return {
+                                    //label: item.PartNo, value: item.PartNo
+                                    label: item.StateId,
+                                    value: item.StateName
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    },
+                    error: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    },
+                    failure: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.value)
+                if (i.value == "") {
+                    $('[id$=txtstate]').val("");
+                    $('[id$=hfStateId]').val("");
+                    return false;
+                } else {
+                    $("[id$=txtstate]").val(i.item.label);
+                    $("[id$=hfStateId]").val(i.item.label);
+                }
+            },
+            minLength: 2,
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var regx = new RegExp('(' + this.term + ')', 'ig');
+            var label = item.value.replace(regx, "<span class='highlight'>" + this.term + "</span>");
+            return $("<li/>").data("ui-autocomplete-item", item).append($("<a>").html(label)).appendTo(ul);
+        };
+
+        // AutoComplete City
+        $("[id$=txtcity]").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url + "/api/Comman/SearchCity?SearchText=" + request.term + "&cid=" + $("#hfCountryId").val() + "&sid=" + $("#hfStateId").val(),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        /*console.log(data.Data);*/
+                        var dataval = data.Data;
+                        if (dataval.length > 0) {
+                            response($.map(dataval, function (item) {
+                                return {
+                                    //label: item.PartNo, value: item.PartNo
+                                    label: item.CityId,
+                                    value: item.CityName
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    },
+                    error: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    },
+                    failure: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.value)
+                if (i.value == "") {
+                    $('[id$=txtcity]').val("");
+                    $('[id$=hfCityId]').val("");
+                    return false;
+                } else {
+                    $("[id$=txtcity]").val(i.item.label);
+                    $("[id$=hfCityId]").val(i.item.label);
+                }
+            },
+            minLength: 2,
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var regx = new RegExp('(' + this.term + ')', 'ig');
+            var label = item.value.replace(regx, "<span class='highlight'>" + this.term + "</span>");
+            return $("<li/>").data("ui-autocomplete-item", item).append($("<a>").html(label)).appendTo(ul);
+        };
+
+        // AutoComplete Area
+        $("[id$=txtarea]").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url + "/api/Comman/SearchArea?SearchText=" + request.term + "&cid=" + $("#hfCountryId").val() + "&sid=" + $("#hfStateId").val() + "&cityid=" + $("#hfCityId").val(),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        /*console.log(data.Data);*/
+                        var dataval = data.Data;
+                        if (dataval.length > 0) {
+                            response($.map(dataval, function (item) {
+                                return {
+                                    //label: item.PartNo, value: item.PartNo
+                                    label: item.AreaId,
+                                    value: item.AreaName
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    },
+                    error: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    },
+                    failure: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.value)
+                if (i.value == "") {
+                    $('[id$=txtarea]').val("");
+                    $('[id$=hfAreaId]').val("");
+                    return false;
+                } else {
+                    $("[id$=txtarea]").val(i.item.label);
+                    $("[id$=hfAreaId]").val(i.item.label);
+                }
+            },
+            minLength: 2,
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var regx = new RegExp('(' + this.term + ')', 'ig');
+            var label = item.value.replace(regx, "<span class='highlight'>" + this.term + "</span>");
+            return $("<li/>").data("ui-autocomplete-item", item).append($("<a>").html(label)).appendTo(ul);
+        };
+
+        // AutoComplete Parent
+        $("[id$=txtparent]").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: url + "/api/Comman/SearchParent?SearchText=" + request.term,
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        /*console.log(data.Data);*/
+                        var dataval = data.Data;
+                        if (dataval.length > 0) {
+                            response($.map(dataval, function (item) {
+                                return {
+                                    //label: item.PartNo, value: item.PartNo
+                                    label: item.SubscriberId,
+                                    value: item.Name
+                                }
+                            }))
+                        }
+                        else {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    },
+                    error: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    },
+                    failure: function (response) {
+                        response([{ label: 'No results found.', value: "" }]);
+                    }
+                });
+            },
+            select: function (e, i) {
+                console.log(i.item.value)
+                if (i.value == "") {
+                    $('[id$=txtparent]').val("");
+                    $('[id$=hfParent]').val("");
+                    return false;
+                } else {
+                    $("[id$=txtparent]").val(i.item.label);
+                    $("[id$=hfParent]").val(i.item.label);
+                }
+            },
+            minLength: 2,
+        }).data("ui-autocomplete")._renderItem = function (ul, item) {
+            var regx = new RegExp('(' + this.term + ')', 'ig');
+            var label = item.value.replace(regx, "<span class='highlight'>" + this.term + "</span>");
+            return $("<li/>").data("ui-autocomplete-item", item).append($("<a>").html(label)).appendTo(ul);
+        };
+    });
+
+     //function to Get Vno
+    function GenerateNewVno() {
+        $.ajax({
+            type: 'Post',
+            url: url + "/api/Comman/GenerateMsCode",
+            contentType: "application/json;charset=utf-8",
+            success: function (response) {
+                console.log(response)
+                var data = response.Data;
+                $('#txtmembercode').val(data);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert("Errors !");
+            },
+            complete: function () {
+
+            }
+        });
+    }
+
+    //
+    function bindMemberType() {
+        $.ajax({
+            type: 'GET',
+            url: url + "/api/Comman/DisplayMemberTypeList",
+            data: {},
+            contentType: "application/json;charset=utf-8",
+            dataType: 'json',
+            success: function (response) {
+                /*console.log(response)*/
+                var data = response.Data;
+                if (response.Data.length > 0) {
+                    var s = '<option value="0">Please Select Member Type</option>';
+                    for (var i = 0; i < data.length; i++) {
+                        s += '<option value="' + data[i].MemberTypeId + '">' + data[i].MemberTypeName + '</option>';
+                    }
+                    $("#ddlmtype").html(s);
+
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+
+            },
+            complete: function () {
+                var mscode = localStorage.getItem('mscode');
+                var mode = localStorage.getItem("editmode");
+                if (mode == "true") {                    
+                    getbyID(mscode);
+                }
+                else {
+                    clearTextBox();
+                }
+                
+            }
+        });
+    }
+
+    //Valdidation using jquery
+    function validate() {
+        var isValid = true;
+        if ($('#txtmembercode').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Membership Code cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtmembercode').focus(); isValid = false;return false;
+        }
+        
+        if ($('#txtname').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Name cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtname').focus(); isValid = false; return false;
+        }
+        
+        if ($('#txtmobile').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Mobile No cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtmobile').focus(); isValid = false; return false;
+        }
+        if ($('#ddlgender').val().trim() == "0") {
+            $.toast({ heading: 'Warning', text: 'Select Gender Type ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#ddlgender').focus(); isValid = false; return false;
+        }
+        if ($('#ddlmtype').val().trim() == "0") {
+            $.toast({ heading: 'Warning', text: 'Select Member Type ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#ddlmtype').focus(); isValid = false; return false;
+        } 
+        if ($('#chkForwarder').prop("checked") == true) {
+            if ($('#hfParent').val().trim() == "") {
+                $.toast({ heading: 'Warning', text: 'Please Parent ! ', icon: 'warning', position: 'top-right', stack: false });
+                $('#txtparent').focus(); isValid = false; return false;
+            }
+        }
+        if ($('#hfCountryId').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Country cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            isValid = false; return false;
+        }
+        if ($('#hfStateId').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'State cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            isValid = false; return false;
+        }
+        if ($('#hfCityId').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'City cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            isValid = false; return false;
+        }
+        if ($('#hfAreaId').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Area cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            isValid = false; return false;
+        }
+        if ($('#txtpincode').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Pincode cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtpincode').focus(); isValid = false; return false;
+        }
+        if ($('#txtlocaladdress').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Local Address cannot be blank ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtlocaladdress').focus(); isValid = false; return false;
+        }
+        
+        return isValid;
+    }
+    //Function for clearing the textboxes 
+    function clearTextBox() {
+        $('#txtname').val("");
+        $('#txtmobile').val("");
+        $('#txtWhatsAppNo').val("");
+        $('#txtDOB').val("");
+        $('#txtemail').val("");
+        $('#txteducation').val("");
+        $('#txtjobprofile').val("");
+        $('#ddlgender').val('0');
+        $('#txtage').val('');
+        $('#ddlMarital').val('0');
+        $('#ddlmtype').val('0');
+        $('#chkForwarder').prop('checked', false);
+        $('#txtparent').val('');
+        $('#hfParent').val('');
+        $('#chkDeActive').prop('checked', false);
+        $('#txtdiscount').val('0');
+
+        $('#hfCountryId').val('');
+        $('#txtcountry').val('');
+
+        $('#hfStateId').val('');
+        $('#txtstate').val('');
+
+        $('#hfCityId').val('');
+        $('#txtcity').val('');
+
+        $('#hfAreaId').val('');
+        $('#txtarea').val('');
+
+        $('#txtpincode').val('');
+        $('#txtlandmark').val('');
+        $('#txtlocaladdress').val('');
+      
+
+        $('#ibox-title').html('Add New Subscriber (Member)');
+        $('#btnSave').show();
+        $('#btnUpdate').hide();       
+        localStorage.setItem('mscode', "");
+        localStorage.setItem('editmode', false); 
+        GenerateNewVno();
+    }
+    //Add Data Function
+    $('#btnSave').on('click', function () {
+        var res = validate();
+        if (res == false) {
+            return false;
+        }
+        if ($('#chk_forworder').prop('checked') == true) {
+            forworder = 0;
+        }
+        var Address = new Array();
+        var obj = {
+            SubscriberId: $('#txtmembercode').val(),
+            Name: $('#txtname').val(),
+            Mobile: $('#txtmobile').val(),
+            WhatsAppNo: $('#txtWhatsAppNo').val(),
+            DOB: $('#txtDOB').val(),
+            Email: $('#txtemail').val(),
+            Education: $('#txteducation').val(),
+            JobProfile: $('#txtjobprofile').val(),
+            Gender: $('#ddlgender :selected').val(),
+            Age: $('#txtage').val() == "" ? 0 : $('#txtage').val(),
+            Marital: $('#ddlMarital :selected').val(),
+            MemberTypeId: $('#ddlmtype :selected').val(),
+            IsForwarder: $("#chkForwarder").is(':checked') == true? 0: 1,
+            ParentId: $('#hfParent').val(),
+            IsDeActive: $("#chkDeActive").is(':checked'),
+            Discount: $('#txtdiscount').val() == "" ? 0 : $('#txtdiscount').val(),
+            contactperson: "",
+            partytype: "m",
+            gstin: "0",
+        };
+
+        var address = {};
+        address.CountryId = $('#hfCountryId').val();
+        address.StateId = $('#hfStateId').val();
+        address.CityId = $('#hfCityId').val();
+        address.AreaId = $('#hfAreaId').val();
+        address.Pincode = $('#txtpincode').val();
+        address.LandMark = $('#txtlandmark').val();
+        address.LocalAddress = $('#txtlocaladdress').val();
+        address.Status = true;
+        Address.push(address);
+
+
+        obj.Address = Address;
+
+
+        $.ajax({
+            url: url + "/api/SubscriberApi/Add",
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(obj),
+            success: function (response) {
+                if (response.Result == 'True') {
+                    $.toast({
+                        heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                        stack: false
+                    });
+                    clearTextBox();
+                }
+                else {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                }
+            },
+            error: function (response) {
+                $.toast({
+                    heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                    stack: false
+                });
+                console.log(response);
+            }
+        });
+    });
+
+    //Function for getting the Data Based upon ID
+    function getbyID(mscode) {
+        $.ajax({
+            url: url + "/api/SubscriberApi/GetSubscriberDetails?mscode=" + mscode,
+            typr: "GET",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+                console.log(result.Data)
+
+                if (result.Status == true) {
+                    var data = result.Data;
+                    $('#txtmembercode').val(data[0].SubscriberId)
+                    $('#txtname').val(data[0].Name);
+                    $('#txtmobile').val(data[0].Mobile);
+                    $('#txtWhatsAppNo').val(data[0].WhatsAppNo);
+                    $('#txtDOB').val(data[0].DOB);
+                    $('#txtemail').val(data[0].Email);
+                    $('#txteducation').val(data[0].Education);
+                    $('#txtjobprofile').val(data[0].JobProfile);
+                    $('#ddlgender').val(data[0].Gender);
+                    $('#txtage').val(data[0].Age);
+                    $('#ddlMarital').val(data[0].Marital);
+                    $('#ddlmtype').val(data[0].MemberTypeId);
+                    $('#chkForwarder').prop('checked', data[0].IsForwarder == "False" ? true : false);
+                    $('#txtparent').val(data[0].ParentId);
+                    $('#hfParent').val(data[0].ParentId);                    
+                    $('#chkDeActive').prop('checked', data[0].IsDeActive == "False" ? false : true);
+                    $('#txtdiscount').val(data[0].Discount);
+                    var Address = data[0].address;
+                    if (Address.length > 0) {
+                        $('#hfCountryId').val(Address[0].CountryId);
+                        $('#txtcountry').val(Address[0].CountryName);
+
+                        $('#hfStateId').val(Address[0].StateId);
+                        $('#txtstate').val(Address[0].StateName);
+
+                        $('#hfCityId').val(Address[0].CityId);
+                        $('#txtcity').val(Address[0].CityName);
+
+                        $('#hfAreaId').val(Address[0].AreaId);
+                        $('#txtarea').val(Address[0].AreaName);
+
+                        $('#txtpincode').val(Address[0].Pincode);
+                        $('#txtlandmark').val(Address[0].LandMark);
+                        $('#txtlocaladdress').val(Address[0].LocalAddress);                      
+                    }                    
+                    $('#ibox-title').html('Edit Subscriber (Member)');
+                    $('#btnUpdate').show();
+                    $('#btnSave').hide();
+                }
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+    }
+
+    //Update Data Function
+    $('#btnUpdate').on('click', function () {
+        var res = validate();
+        if (res == false) {
+            return false;
+        }
+        var Address = new Array();
+        var obj = {
+            SubscriberId: $('#txtmembercode').val(),
+            Name: $('#txtname').val(),
+            Mobile: $('#txtmobile').val(),
+            WhatsAppNo: $('#txtWhatsAppNo').val(),
+            DOB: $('#txtDOB').val(),
+            Email: $('#txtemail').val(),
+            Education: $('#txteducation').val(),
+            JobProfile: $('#txtjobprofile').val(),
+            Gender: $('#ddlgender :selected').val(),
+            Age: $('#txtage').val() == "" ? 0 : $('#txtage').val(),
+            Marital: $('#ddlMarital :selected').val(),
+            MemberTypeId: $('#ddlmtype :selected').val(),
+            IsForwarder: $("#chkForwarder").is(':checked') == true ? 0 : 1,
+            ParentId: $('#hfParent').val(),
+            IsDeActive: $("#chkDeActive").is(':checked'),
+            Discount: $('#txtdiscount').val() == "" ? 0 : $('#txtdiscount').val(),
+            contactperson: "",
+            partytype: "m",
+            gstin: "0",
+        };
+
+        var address = {};
+        address.CountryId = $('#hfCountryId').val();
+        address.StateId = $('#hfStateId').val();
+        address.CityId = $('#hfCityId').val();
+        address.AreaId = $('#hfAreaId').val();
+        address.Pincode = $('#txtpincode').val();
+        address.LandMark = $('#txtlandmark').val();
+        address.LocalAddress = $('#txtlocaladdress').val();
+        address.Status = true;
+        Address.push(address);
+
+
+        obj.Address = Address;
+        $.ajax({
+            url: url + "/api/SubscriberApi/Update",
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(obj),
+            success: function (response) {
+                if (response.Result == 'True') {
+                    $.toast({
+                        heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                        stack: false
+                    });
+                    clearTextBox();
+                }
+                else {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                }
+            },
+            error: function (response) {
+                $.toast({
+                    heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                    stack: false
+                });
+                console.log(response);
+            }
+        });
+    });
+</script>

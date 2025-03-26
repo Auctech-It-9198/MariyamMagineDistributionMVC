@@ -1,0 +1,81 @@
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+C:\Project\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).dll
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\bin\Debug\DAL(Data Access Layer).pdb
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).dll
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\bin\Debug\BOL(Business Objects Layer).pdb
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.AssemblyReference.cache
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CoreCompileInputs.cache
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).csproj.CopyComplete
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).dll
+E:\ConverMvc\InventoryManagement (3)\InventoryManagement\DAL(Data Access Layer)\obj\Debug\DAL(Data Access Layer).pdb

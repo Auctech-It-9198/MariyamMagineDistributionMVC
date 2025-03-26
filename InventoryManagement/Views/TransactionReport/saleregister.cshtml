@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "SaleRegister";
+}
+
+<style>
+    .notshow {
+        display: none;
+    }
+</style>
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">SaleRegister</div>
+            
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>From Date</label>
+                        <input type="date" class="form-control" />
+
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>To Date</label>
+                        <input type="date" class="form-control" />
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Magazine</label>
+                        <select class="form-control input-sm" id="ddlmagzine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Released Magazine</label>
+                        <select class="form-control input-sm" id="ddlrelmagazine">
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label style="color:white">Refresh</label>
+                        <input type="button" id="btnreset" class="btn btn-block btn-info" value="Search" />
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="ibox">
+
+        @*<div class="ibox-head">
+            <div class="ibox-title">Dispatch List</div>
+
+
+
+
+
+        </div>*@
+
+        <div class="ibox-body">
+            <div class="row">
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+<script src="~/assets/sweetalert/sweetalert.min.js"></script>
+@section scripts{
+
+    <script>
+        var url = '';
+       
+        $(function () {
+
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            bindMagazine();
+            
+
+
+
+            // select event Magazine ddl
+            $("#ddlmagzine").change(function () {
+
+                /* alert($('option:selected', this).text());*/
+                var mzid = $("#ddlmagzine").val();
+
+                bindReleasedMagazine(mzid);
+               
+              
+
+
+            });
+
+
+            // select event Magazine ddl
+            $("#ddlrelmagazine").change(function () {
+
+                var mzid = $("#ddlmagzine").val();
+                var mrid = $("#ddlrelmagazine").val();
+
+           
+
+
+            });
+
+
+        });
+
+
+
+
+        //bind Magazine
+        function bindMagazine() {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+
+
+                        var s = '<option value="0">Select All Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        //bind released Magazine
+        function bindReleasedMagazine(mzid)
+        {
+
+            $("#ddlrelmagazine").html("");
+
+
+            $.ajax({
+                url: url + "/api/Comman/Releasedmagazine?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response)
+                {
+
+
+                    try
+                    {
+                        var data = response.Data;
+                        if (response.Data.length > 0)
+                        {
+
+                            var s = '<option value="0">Select released Magzine</option>';
+                            for (var i = 0; i < data.length; i++)
+                            {
+                                s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                            }
+                            $("#ddlrelmagazine").html(s);
+
+                        }
+                    }
+                    catch (err)
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                    }
+
+
+                },
+                error: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                },
+                failure: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                }
+            });
+
+        }
+
+
+
+
+
+        $("#btnreset").on('click', function () {
+
+            $.toast({ heading: 'Warning', text: 'Record Reset ! ', icon: 'success', position: 'top-right', stack: false });
+            location.href = location.href;
+
+        })
+
+
+
+    </script>
+}

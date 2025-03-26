@@ -1,0 +1,30 @@
+﻿@model IEnumerable<BOL_Business_Objects_Layer_.Menu>
+<ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="accordion">
+    @{
+        foreach (var menu in Model)
+        {
+            <li class="@menu.Li_Class">
+                <a class="@menu.A_Class" href="JavaScript:void(0)">
+                    <i class="@menu.Fa_Icon">@menu.Arrow</i>
+                    <span class="menu-title" data-i18n="Dashboard">@menu.MenuName</span>
+                </a>
+                @if (menu.submenus.Count > 0)
+                {
+                    <div class="collapsible-body">
+                        <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                            @foreach (var submenu in menu.submenus)
+                            {
+                                <li>
+                                    <a href="JavaScript:void(0)">
+                                        <i class="@submenu.Fa_Icon">@submenu.Arrow</i>
+                                        <span data-i18n="Contact">@submenu.SubMenuName</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </li>
+        }
+    }
+</ul>

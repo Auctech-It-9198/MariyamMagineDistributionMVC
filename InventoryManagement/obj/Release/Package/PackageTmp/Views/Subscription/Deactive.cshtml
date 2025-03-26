@@ -1,0 +1,753 @@
+﻿
+@{
+    ViewBag.Title = "Renew-Subscription";
+}
+
+@section css {
+
+
+}
+
+<div class="page-content fade-in-up">
+
+
+    @*// magzine article ledger*@
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Renew Subscriptions</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Index" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+
+            <div class="row">
+
+
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Code</label>
+                        <input type="hidden" id="hfsid" />
+                        <input type="hidden" id="hfmemberid" />
+
+                        <input class="form-control" id="txtmember" type="text" placeholder="Enter Mcode" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Name</label>
+                        <input class="form-control" id="txtmembername" type="text" placeholder="Enter Name" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Mobile</label>
+                        <input class="form-control" id="txtmobile" type="text" placeholder="Enter Mobile" disabled>
+                    </div>
+                </div>
+
+
+
+                
+                <div class="col-md-12">
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-striped" id="tbltenuredetails">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Magazine Name</th>
+                                    <th>Tenure</th>
+                                    <th>From Date</th>
+                                    <th>To Date</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                            </tbody>
+
+
+                            </table>
+                        </div>
+                </div>
+
+               
+
+                <div class="col-md-12">
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-striped " id="tbltenure">
+                            <thead style="background-color: #d5d1d1">
+                                <tr>
+                                    <th>
+                                        <div class="form-group">
+                                            <label>Select Magzine</label>
+                                            <select class="form-control input-sm" id="ddlmagzine"></select>
+                                        </div>
+                                    </th>
+
+
+
+                                    <th>
+                                        <div class="form-group">
+                                            <label>Freequency</label>
+                                            <select class="form-control input-sm" id="ddlfrequency" disabled>
+                                                <option value="0">Select</option>
+                                                <option value="D">Daily</option>
+                                                <option value="W">Weekly</option>
+                                                <option value="M">Monthly</option>
+                                                <option value="H">Halfy-yearly</option>
+                                                <option value="Q">Quarterly</option>
+                                                <option value="A">Annually</option>
+                                            </select>
+
+                                        </div>
+                                    </th>
+
+                                    <th>
+
+                                        <div class="form-group">
+                                            <label>Tenure</label>
+                                            <select class="form-control input-sm" id="ddltenure">
+                                                <option value="0">Select Tenure</option>
+                                            </select>
+
+                                        </div>
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>From Date</label>
+                        <input class="form-control" id="txtfromdate" type="date" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>To Date</label>
+                        <input class="form-control" id="txttodate" type="date" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-8"></div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Rate</label>
+                        <input class="form-control" id="txtrate" type="number" disabled>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Discount</label>
+                        <input class="form-control" id="txtdiscount" type="number" onblur="calculategst()">
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Discount Amt</label>
+                        <input class="form-control" id="txtdiscountamt" type="text" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Net Amt</label>
+                        <input class="form-control" id="txtnetamt" type="text" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input class="form-control" id="txtamt" type="number" disabled>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>GST</label>
+                        <input class="form-control" id="txtgst" type="number" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>GST Amt</label>
+                        <input class="form-control" id="txtgstamt" type="number" disabled>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Payable.Amt</label>
+                        <input class="form-control" id="txtpaybleamt" type="number" disabled>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+    @*// Save *@
+    <!--<div class="ibox">
+
+        <div class="ibox-body">
+
+            <div class="txtright">
+                <button class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal"> Proceed</button>
+            </div>
+
+        </div>
+    </div>-->
+
+
+
+    
+    @*// Save *@
+    <div class="ibox">
+
+        <div class="ibox-body">
+
+            <div class="txtright">
+                <button class="btn btn-lg btn-primary" id="btnsave"> Save</button>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header info-danger">
+                <h5 class="modal-title" id="exampleModalLabel">Select Payment Mode</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="container">
+
+                    <div class="row">
+
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Payment Mode</label>
+                                <select class="form-control input-sm">
+
+                                    <option value="0">Select</option>
+                                    <option value="H">Cash</option>
+                                    <option value="E">Online</option>
+                                    <option value="E">Card</option>
+                                    <option value="E">Google pay</option>
+                                    <option value="E">Phone pay</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section scripts{
+
+    <script>
+       var url = '';
+         var sbid = getUrlVars()["sbid"];
+         var mzid = getUrlVars()["mzid"];
+         var msid = getUrlVars()["msid"];
+
+
+       $(function () {
+           url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+
+         
+           getrecord(sbid)
+
+           //$("#ddlmagzine").change(function () {
+
+           //    /* alert($('option:selected', this).text());*/
+           //    var mzid = $("#ddlmagzine").val();
+           //    bindfrequency(mzid);
+           //    bindtenure(mzid);
+
+           //});
+
+
+           $("#ddltenure").change(function () {
+
+               /*alert($('option:selected', this).text())*/
+               var tid = $("#ddltenure").val();
+               var tname = $('option:selected', this).text();
+               setrate(tid, tname);
+
+           });
+
+
+       })
+
+
+       // Read a page's GET URL variables and return them as an associative array.
+       function getUrlVars() {
+           var vars = [], hash;
+           var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+           for (var i = 0; i < hashes.length; i++) {
+               hash = hashes[i].split('=');
+               vars.push(hash[0]);
+               vars[hash[0]] = hash[1];
+           }
+           return vars;
+       }
+
+       function getrecord(sbid) {
+
+
+           $.ajax({
+               url: url + "/api/SubscriptionsApi/getRecordsbysbid?sbid=" + sbid + "&mzid=" + mzid + "&msid=" + msid,
+               dataType: "json",
+               type: "GET",
+               contentType: "application/json; charset=utf-8",
+               success: function (response)
+               {
+                   var rw = "";
+                   var data = response.Data;
+
+                   console.log(response);
+
+                   if (response.Data.length > 0)
+                   {
+
+                       for (var i = 0; i < data.length; i++)
+                       {
+                           rw += "<tr>";
+                           rw += "<td>" + parseInt(i+1) + "</td>";
+                           rw += "<td>" + data[i].mzname + "</td>";
+                           rw += "<td>" + data[i].mtenure + "-Month</td>";
+                           rw += "<td>" + data[i].fromdate + "</td>";
+                           rw += "<td>"+data[i].todate+"</td>";
+                           rw += "</tr>";
+                       }
+
+                       $("#tbltenuredetails tbody").append(rw);
+
+                      
+                       $('#txtmember').val(data[0].mscode);
+                       $('#txtmembername').val(data[0].Name);
+                       $('#txtmobile').val(data[0].Mobile);
+                       
+
+                       
+                       $("#txtfromdate").val(data[data.length-1].todate);
+                       $("#hfmemberid").val(data[0].msid);
+                       $("#hfsid").val(data[0].sbid);
+                       
+                       bindmagzine(data[0].mzid);
+                   }
+
+               },
+               complete: function (response)
+               {
+                  
+                  
+               },
+               error: function (response) {
+                   response([{ label: 'No results found.', value: "" }]);
+               },
+               failure: function (response) {
+                   response([{ label: 'No results found.', value: "" }]);
+               }
+           });
+
+        }
+
+
+
+
+        function bindmagzine(mzid)
+        {
+            cleartrate();
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+                    $("#ddlmagzine").val(mzid);
+                    bindfrequency(mzid);
+                },
+                complete: function ()
+                {
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+        }
+
+        function bindfrequency(mzid) {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinefrequency?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+                        $("#ddlfrequency").val(data[0].Frequency);
+
+                    }
+                    bindtenure(mzid);
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        function bindtenure(mzid) {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinetenure?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Select Tenure</option>';
+                        for (var i = 0; i < data.length; i++) {
+
+                            var splitsmonth = data[i].Tenure.split("-");
+                            var Tenurename = splitsmonth[0] + "-" + "Month" + "-" + splitsmonth[1];
+
+
+                            s += '<option value="' + data[i].PriceId + '">' + Tenurename + '</option>';
+                        }
+                        $("#ddltenure").html(s);
+                    }
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        function setrate(tid, tname)
+        {
+            cleartrate();
+
+
+
+
+            var gstsplts = tid.split("-");
+            var gstper = gstsplts[1];
+
+
+            var splitsmonth = tname.split("-");
+            var adddays = splitsmonth[0];
+            var rate = splitsmonth[2];
+
+            if (adddays == "1") {
+                adddays = 30;
+            }
+            if (adddays == "3") {
+                adddays = 60;
+            }
+            if (adddays == "6") {
+                adddays = 180;
+            }
+            if (adddays == "12") {
+                adddays = 365;
+            }
+            if (adddays == "24") {
+                adddays = 730
+            }
+            if (adddays == "36") {
+                adddays = 1095
+            }
+
+            //fromdate
+            var now = new Date($("#txtfromdate").val());
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            var fromday = now.getFullYear() + "-" + (month) + "-" + (day);
+            //Todate
+            var today_date = new Date($("#txtfromdate").val());
+            today_date.setDate(today_date.getDate() + parseInt(adddays));
+            var tday = ("0" + today_date.getDate()).slice(-2);
+            var tmonth = ("0" + (today_date.getMonth() + 1)).slice(-2);
+            var todate = today_date.getFullYear() + "-" + (tmonth) + "-" + (tday);
+            //set in textbox
+            $('#txtfromdate').val(fromday);
+            $('#txttodate').val(todate);
+            //set rate
+            $('#txtrate').val(rate);
+            $('#txtnetamt').val(rate);
+            //set gst
+            $('#txtgst').val(gstper);
+
+            //set doscount
+            $('#txtdiscount').val("0");
+            $('#txtdiscountamt').val("0");
+
+            //calculate
+            var totalgst = parseFloat((rate * gstper) / 100);
+            $('#txtgstamt').val(totalgst);
+            var amt = parseFloat(rate - totalgst);
+
+
+
+
+
+
+            $('#txtamt').val(amt);
+            $('#txtpaybleamt').val(rate);
+
+
+
+
+
+
+        }
+
+        function calculategst() {
+            var rate = $("#txtrate").val();
+            var gst = $("#txtgst").val();
+            var dis = $("#txtdiscount").val();
+            var disamt = parseFloat((rate * dis) / 100);
+            var newrate = parseFloat(rate - disamt);
+
+            //calculate
+            var totalgst = parseFloat((newrate * gst) / 100);
+            $('#txtgstamt').val(parseFloat(totalgst).toFixed(2));
+            $('#txtamt').val(parseFloat(newrate - totalgst).toFixed(2));
+            $('#txtpaybleamt').val(newrate);
+            $('#txtnetamt').val(newrate);
+            $('#txtdiscountamt').val(disamt);
+
+
+
+
+
+        }
+
+        function cleartrate() {
+            $("txtfromdate").val();
+            $("txttodate").val();
+            $("txtrate").val();
+            $("txtdiscount").val();
+            $("txtgst").val();
+            $("txtpybleamt").val();
+
+        }
+
+
+
+         $("#btnsave").on("click", function () {
+
+        var res = validate();
+        if (res == false)
+        {
+            return false;
+        }
+         
+         var splitpriceid = $('#ddltenure').val().split("-");
+         var splitpricetxt = $('#ddltenure option:selected').text().split("-");
+
+         var priceid = splitpriceid[0];
+         var tenurename = splitpricetxt[0];
+        
+
+       
+        
+
+        var obj =
+        {
+          sbid: $('#hfsid').val(),
+          msid: $('#hfmemberid').val(),
+          Name :$('#txtmembername').val(),
+          Mobile:$('#txtmobile').val(),
+          mscode :$('#txtmember').val(),
+
+          mzid : $('#ddlmagzine').val(),
+          mzname : $('#ddlmagzine option:selected').text(),
+
+
+          mfrequency :$('#ddlfrequency').val(),
+          
+          pricemasterid:priceid,
+          mtenure : tenurename,
+
+          fromdate :$('#txtfromdate').val(),
+          todate :$('#txttodate').val(),
+
+
+          rate :$('#txtrate').val(),
+          dis :$('#txtdiscount').val(),
+          disamt :$('#txtdiscountamt').val(),
+          gst :$('#txtgst').val(),
+          gstamt :$('#txtgstamt').val(),
+          amt :$('#txtamt').val(),
+          paybleamt :$('#txtpaybleamt').val(),
+
+          greaseperiods : 0,
+          substatus : 1,
+
+        };
+
+
+
+      $.ajax({
+            url: url + "/api/SubscriptionsApi/Renew",
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(obj),
+            success: function (response) {
+                if (response.Result == 'True') 
+                {
+                    $.toast({
+                        heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                        stack: false
+                    });
+                     
+                     location.href = "Index";              
+
+                }
+                else {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                }
+            },
+            error: function (response) {
+                $.toast({
+                    heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                    stack: false
+                });
+                console.log(response);
+            }
+        });
+
+
+    })
+    
+   //Valdidation using jquery
+    function validate()
+    {
+        var isValid = true;
+        if ($('#hfmemberid').val().trim() == "")
+        {
+            $.toast({ heading: 'Warning', text: 'Enter Member ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtmember').focus(); isValid = false; return false;
+        }
+
+        if ($('#ddlmagzine').val().trim() == "0") {
+            $.toast({ heading: 'Warning', text: 'Select Magazine ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#ddlmagzine').focus(); isValid = false; return false;
+        }
+
+        if ($('#ddltenure').val().trim() == "") {
+            $.toast({ heading: 'Warning', text: 'Select Tenure ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#ddltenure').focus(); isValid = false; return false;
+        }
+
+        return isValid;
+
+    }
+
+
+    </script>
+
+
+}
+
+

@@ -1,0 +1,241 @@
+﻿
+@{
+    ViewBag.Title = "Article-Index";
+}
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+
+<div class="page-content fade-in-up">
+
+
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Article list</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Add" class="btn btn-lg  btn-primary abtncolr">Add New Article</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label>Select Released Tittle</label>
+                            <select class="form-control input-sm" id="ddlrelmagazine">
+                                <option value="0">Select</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+             
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered" id="tbl_article">
+                    <thead>
+                        <tr>
+                            <th>SNo.</th>
+                         
+                            <th>Article Number</th>
+                            <th>Article Tittle</th>
+                            <th>Status</th>
+                            <th class="text-center"></th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+@section scripts{
+    <script src="~/assets/sweetalert/sweetalert.min.js"></script>
+
+    <script>
+        var url = '';
+        var mrid = '0';
+
+        $(function ()
+        {
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+
+            //bindmagazine
+            bindrelmagzine();
+            DisplayList(mrid);
+
+        });
+
+
+        $("#ddlrelmagazine").change(function () {
+
+            /*alert($('option:selected', this).text())*/
+            mrid = $("#ddlrelmagazine").val();
+            DisplayList(mrid);
+
+        });
+
+
+        function DisplayList(mrid)
+        {
+            $('#tbl_article').DataTable({
+                "sAjaxSource": "/Article/DisplayArticleListPagewise?mrid=" + mrid,
+                "bServerSide": true,
+                "bDestroy": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "order": [[0, 'desc']],
+                "lengthChange": true,
+                responsive: true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'Bfrtip',
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                "language": {
+                    "emptyTable": "No record found.",
+                    "processing":
+                        '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                },
+                "oLanguage": {
+                    "sSearch": "Search  Released No/ Tittle - Article No/Tittle"
+                },
+                "columns": [
+                    {
+                        bSortable: false,
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    //{ "data": "releasedcode" },
+                    //{ "data": "releadetittle"},
+                    { "data": "atitlecode" },
+                    { "data": "artitle" },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            if (full.ispublish == "True")
+                            {
+                                return '<span class="label label-info">Publish</span>';
+                            }
+                            else {
+                                return '<span class="label label-danger">Un-Publish</span>';
+                            }
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnEdit" class="btn btn-info btn-sm" title="Edit" data-arid=' + full.arid + ' href="javascript:;"><i class="fa fa-edit"></i></a>';
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnDelete" class="btn btn-danger btn-sm" title="Delete" data-arid=' + full.arid + ' href="javascript:;"><i class="fa fa-remove"></i></a>';
+                        }
+                    }
+                ]
+            });
+        }
+
+        //
+        $('#tbl_article tbody').on('click', '#btnEdit', function ()
+        {
+            var arid = $(this).attr('data-arid');
+            localStorage.setItem("arid", arid);
+            localStorage.setItem("editmode", true);
+            window.location.href = "/Article/Add";
+        })
+        //function for deleting record
+        $('#tbl_article tbody').on('click', '#btnDelete', function () {
+            var arid = $(this).attr('data-arid');
+           
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/Magzine/DeleteArticle?arid=" + arid,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.Result == "True")
+                        {
+
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+                            $("#tbl_article").dataTable().fnDraw();
+                        }
+                        {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage)
+                    {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+        //
+        function bindrelmagzine() {
+        
+
+            $.ajax({
+                url: url + "/api/Comman/Relmagzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">All Released Title</option>';
+                        for (var i = 0; i < data.length; i++)
+                        {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlrelmagazine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+        }
+    </script>
+}

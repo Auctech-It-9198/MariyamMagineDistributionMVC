@@ -1,0 +1,326 @@
+﻿
+@{
+    ViewBag.Title = "Renew-Subscription";
+}
+
+@section css {
+
+
+}
+
+<div class="page-content fade-in-up">
+
+
+    @*// magzine article ledger*@
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Grace Periods</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Index" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+
+            <div class="row">
+
+
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Code</label>
+                        <input type="hidden" id="hfsid" />
+                        <input type="hidden" id="hfmemberid" />
+
+                        <input class="form-control" id="txtmember" type="text" placeholder="Enter Mcode" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Name</label>
+                        <input class="form-control" id="txtmembername" type="text" placeholder="Enter Name" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Member Mobile</label>
+                        <input class="form-control" id="txtmobile" type="text" placeholder="Enter Mobile" disabled>
+                    </div>
+                </div>
+
+
+
+                
+                <div class="col-md-12">
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered table-striped" id="tbltenuredetails">
+                            <thead>
+                                <tr>
+                                    <th>Sno</th>
+                                    <th>Magazine Name</th>
+                                    <th>Tenure</th>
+                                    <th>From Date</th>
+                                    <th>To Date</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                            </tbody>
+
+
+                            </table>
+                        </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    @*// Save *@
+    <div class="ibox">
+
+        <div class="ibox-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <label> Enter Grace Periods (Min 10 -  Max 20) Days</label>
+                    <input type="number" id="txtgrace" class="form-control" />
+                </div>
+                <div class="col-md-4"></div>
+
+                <div class="col-md-4 txtright mt-4">
+                    <button class="btn  btn-primary mt-2" id="btnsave"> Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+@section scripts{
+
+    <script>
+       var url = '';
+         var sbid = getUrlVars()["sbid"];
+         var mzid = getUrlVars()["mzid"];
+         var msid = getUrlVars()["msid"];
+
+
+       $(function () {
+           url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+
+         
+           getrecord(sbid)
+
+         
+
+
+        
+
+
+       })
+
+
+       // Read a page's GET URL variables and return them as an associative array.
+       function getUrlVars() {
+           var vars = [], hash;
+           var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+           for (var i = 0; i < hashes.length; i++) {
+               hash = hashes[i].split('=');
+               vars.push(hash[0]);
+               vars[hash[0]] = hash[1];
+           }
+           return vars;
+       }
+
+       function getrecord(sbid) {
+
+
+           $.ajax({
+               url: url + "/api/SubscriptionsApi/getRecordsbysbid?sbid=" + sbid + "&mzid=" + mzid + "&msid=" + msid,
+               dataType: "json",
+               type: "GET",
+               contentType: "application/json; charset=utf-8",
+               success: function (response)
+               {
+                   var rw = "";
+                   var data = response.Data;
+
+                   console.log(response);
+
+                   if (response.Data.length > 0)
+                   {
+
+                       for (var i = 0; i < data.length; i++)
+                       {
+                           rw += "<tr>";
+                           rw += "<td>" + parseInt(i+1) + "</td>";
+                           rw += "<td>" + data[i].mzname + "</td>";
+                           rw += "<td>" + data[i].mtenure + "-Month</td>";
+                           rw += "<td>" + data[i].fromdate + "</td>";
+                           rw += "<td>"+data[i].todate+"</td>";
+                           rw += "</tr>";
+                       }
+
+                       $("#tbltenuredetails tbody").append(rw);
+
+                      
+                       $('#txtmember').val(data[0].mscode);
+                       $('#txtmembername').val(data[0].Name);
+                       $('#txtmobile').val(data[0].Mobile);
+                       
+
+                       
+                       $("#txtfromdate").val(data[data.length-1].todate);
+                       $("#hfmemberid").val(data[0].msid);
+                       $("#hfsid").val(data[0].sbid);
+                       
+                    
+                   }
+
+               },
+               complete: function (response)
+               {
+                  
+                  
+               },
+               error: function (response) {
+                   response([{ label: 'No results found.', value: "" }]);
+               },
+               failure: function (response) {
+                   response([{ label: 'No results found.', value: "" }]);
+               }
+           });
+
+        }
+
+
+
+
+  
+  
+
+
+  
+
+   
+
+        function cleartrate() {
+            $("txtgrace").val();
+          
+
+        }
+
+
+
+         $("#btnsave").on("click", function () {
+
+        var res = validate();
+        if (res == false)
+        {
+            return false;
+        }
+         
+
+          
+
+        var obj =
+        {
+            sbid: sbid,
+            msid: msid,
+            mzid: mzid,
+            greaseperiods: $("#txtgrace").val(),
+            
+        };
+
+
+
+      $.ajax({
+            url: url + "/api/SubscriptionsApi/Grace",
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(obj),
+            success: function (response) {
+                if (response.Result == 'True') 
+                {
+                    $.toast({
+                        heading: 'Success', text: response.Message, showHideTransition: 'fade', icon: 'success', position: 'top-right',
+                        stack: false
+                    });
+                     
+                     location.href = "Index";              
+
+                }
+                else {
+                    $.toast({
+                        heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                        stack: false
+                    });
+                }
+            },
+            error: function (response) {
+                $.toast({
+                    heading: 'Error', text: response.Message, showHideTransition: 'fade', icon: 'error', position: 'top-right',
+                    stack: false
+                });
+                console.log(response);
+            }
+        });
+
+
+    })
+    
+   //Valdidation using jquery
+    function validate()
+    {
+        var isValid = true;
+        if ($('#txtgrace').val().trim() == "")
+        {
+            $.toast({ heading: 'Warning', text: 'Enter Grace Periods ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtgrace').focus();
+            isValid = false; return false;
+        }
+
+        if (parseInt($('#txtgrace').val()) < 10 || parseInt($('#txtgrace').val()) > 20)
+        {
+            $.toast({ heading: 'Warning', text: 'Enter Days  Between Range ! ', icon: 'warning', position: 'top-right', stack: false });
+            $('#txtgrace').focus();
+            isValid = false; return false;
+        }
+
+        return isValid;
+
+    }
+
+
+    </script>
+
+
+}
+
+

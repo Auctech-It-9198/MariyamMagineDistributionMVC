@@ -1,0 +1,414 @@
+﻿
+@{
+    ViewBag.Title = "Deleivery";
+}
+
+<style>
+    .notshow {
+        display: none;
+    }
+</style>
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Dispatch</div>
+            <div class="ibox-tools">
+                <a href="Add" class="btn btn-lg  btn-primary abtncolr">Add New Dispatch</a>
+            </div>
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Magazine</label>
+                        <select class="form-control input-sm" id="ddlmagzine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Released Magazine</label>
+                        <select class="form-control input-sm" id="ddlrelmagazine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label style="color:white">Refresh</label>
+                        <input type="button" id="btnreset" class="btn btn-block btn-danger" value="Reset"  />
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+ 
+
+
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Dispatch List</div>
+           
+
+
+
+
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <table class="table table-bordered" id="tbldilivery">
+                    <thead>
+                        <tr>
+
+                            <th>SNo</th>
+                            <th>Vno</th>
+                            <th>Date</th>
+                            <th>Magazine</th>
+                            <th>Release Title</th>
+                            <th>Total Qty</th>
+                            <th>Edit</th>
+                            <th>Del</th>
+                            <th>Print</th>
+                            <th>Dispatch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="ibox">
+
+
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-10"></div>
+                <div class="col-md-2">
+                    <input type="button" class="btn btn-success btn-block" value="Save" id="btnsend" />
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+<script src="~/assets/sweetalert/sweetalert.min.js"></script>
+@section scripts{
+
+    <script>
+       var url = '';
+        var compcode = '';
+        var vtype ="Di"
+        $(function () {
+
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            bindMagazine();
+            DisplayList('&nbsp;', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+            // select event Magazine ddl
+            $("#ddlmagzine").change(function () {
+
+                /* alert($('option:selected', this).text());*/
+                var mzid = $("#ddlmagzine").val();
+
+                bindReleasedMagazine(mzid);
+                $("#txtstock").val('0');
+                DisplayList('&nbsp;', '0', '0', '0', '0', '0', '0', '0', mzid, '0', '0', '0');
+
+
+            });
+
+
+            // select event Magazine ddl
+            $("#ddlrelmagazine").change(function () {
+
+                var mzid = $("#ddlmagzine").val();
+                var mrid = $("#ddlrelmagazine").val();
+
+                DisplayList('&nbsp;', '0', '0', '0', '0', '0', '0', '0', mzid, mrid, '0', '0');
+
+
+            });
+
+
+        });
+
+
+     
+      
+        //bind Magazine
+        function bindMagazine() {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+
+
+                        var s = '<option value="0">Select All Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        //bind released Magazine
+        function bindReleasedMagazine(mzid)
+        {
+
+            $("#ddlrelmagazine").html("");
+
+
+            $.ajax({
+                url: url + "/api/Comman/Releasedmagazine?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response)
+                {
+
+
+                    try
+                    {
+                        var data = response.Data;
+                        if (response.Data.length > 0)
+                        {
+
+                            var s = '<option value="0">Select released Magzine</option>';
+                            for (var i = 0; i < data.length; i++)
+                            {
+                                s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                            }
+                            $("#ddlrelmagazine").html(s);
+
+                        }
+                    }
+                    catch (err)
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                    }
+
+
+                },
+                error: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                },
+                failure: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                }
+            });
+
+        }
+
+
+       
+
+        
+        $("#btnreset").on('click', function () {
+
+            $.toast({ heading: 'Warning', text: 'Record Reset ! ', icon: 'success', position: 'top-right', stack: false });
+            location.href = location.href;
+
+        })
+
+
+    
+
+
+     
+
+
+        function DisplayList(search, cid, sid, cityid, areaid, isdeactive, mtype, gender, mzid, mrid, gperiods, cstatus) {
+
+            $("#tbldilivery tbody").empty();
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/DeliveryApi/DisplayListPagewisemasterlist?search=" + search + "&cid=" + cid + "&sid=" + sid + "&cityid=" + cityid + "&areaid=" + areaid + "&deactive=" + isdeactive + "&mtype=" + mtype + "&gender=" + gender + "&mzid=" + mzid + "&mrid=" + mrid + "&gperiods=" + gperiods + "&cstatus=" + cstatus,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    var rw = "";
+                    if (response.Data.length > 0) {
+
+                        for (var i = 0; i < data.length; i++) {
+                            rw += "<tr>";
+                            rw += "<td>" + parseInt(i + 1) + "</td>";
+                        
+                            rw += "<td>" + data[i].vno + "</td>";
+                            rw += "<td>" + data[i].vdate + "</td>";
+                            rw += "<td>" + data[i].mzname + "</td>";
+                            rw += "<td>" + data[i].mrname + "</td>";
+                            rw += "<td>" + data[i].qty + "</td>";
+                            rw += '<td><a id="btnEdit" class="btn btn-info btn- sm" title="Edit" data-vno=' + data[i].vno + ' href="javascript: ; "><i class="fa fa-edit"></i></a></td>'; 
+                            rw += '<td><a id="btnDelete" class="btn btn-danger btn- sm" title="Edit" data-vno=' + data[i].vno + ' href="javascript: ; "><i class="fa fa-remove"></i></a></td>';
+                            rw += '<td><a id="btnprint" class="btn btn-success btn- sm" title="Edit" data-vno=' + data[i].vno + ' href="javascript: ; "><i class="fa fa-print"></i></a></td>';
+                            rw += '<td><a id="btndispatch" class="btn btn-warning btn- sm" title="Edit" data-vno=' + data[i].vno + ' href="javascript: ; "><i class="fa fa-print"></i></a></td>';
+                            rw += "</tr>";
+                        }
+                    }
+                    $("#tbldilivery tbody").append(rw);
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+
+
+        }
+        //
+        //function for deleting record
+        $('#tbldilivery tbody').on('click', '#btnDelete', function () {
+            var vno = $(this).attr('data-vno');
+            var vtype = "Di";
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/DeliveryApi/Delete?vno=" + vno + "&vtype=" + vtype,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.Result == 'True')
+                        {
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+
+                            DisplayList('&nbsp;', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+                        }
+                        else
+                        {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+
+
+
+        //function for Printing record
+        $('#tbldilivery tbody').on('click', '#btnprint', function () {
+            var vno = $(this).attr('data-vno');
+            var vtype = "Di";
+            swal({
+                title: "Are you sure?",
+                text: "You want to Print this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, Print it!",
+                closeOnConfirm: false
+            }, function ()
+            {
+                location.href = "Printpage?vno=" + vno + "&vtype=" + vtype;
+
+            });
+
+        });
+
+        //function for Dispatch record
+        $('#tbldilivery tbody').on('click', '#btndispatch', function ()
+        {
+            var vno = $(this).attr('data-vno');
+            var vtype = "Di";
+            swal({
+                title: "Are you sure?",
+                text: "You want to Dispatch this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, Print it!",
+                closeOnConfirm: false
+            }, function () {
+                location.href = "Dispatch?vno=" + vno + "&vtype=" + vtype;
+
+            });
+
+        });
+
+    </script>
+}

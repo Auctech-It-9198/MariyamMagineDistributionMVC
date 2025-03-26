@@ -1,0 +1,666 @@
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+G:\3Ravi\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+D:\Maryam\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+G:\3Ravi\Maryam\InventoryManagement (2)\InventoryManagement\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Project\Maryam\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+C:\Project\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+C:\Project\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+C:\Project\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+C:\Project\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+C:\Project\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+C:\Project\Maryam\06-12-22\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+C:\Project\Maryam\12-12-2022\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+G:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll.config
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\APIs_Layer.pdb
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.exe.config
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csc.rsp
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.exe.config
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\csi.rsp
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Managed.Core.targets
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\Microsoft.Win32.Primitives.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.AppContext.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Collections.Immutable.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Console.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Diagnostics.StackTrace.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Globalization.Calendars.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.Compression.ZipFile.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Http.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Net.Sockets.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Reflection.Metadata.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Text.Encoding.CodePages.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.ValueTuple.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.ReaderWriter.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XmlDocument.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\System.Xml.XPath.XDocument.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.exe.config
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\vbc.rsp
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\roslyn\VBCSCompiler.exe.config
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.Web.Infrastructure.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BLL(Business Logic Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\BOL(Business Objects Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Newtonsoft.Json.xml
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Net.Http.Formatting.xml
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.xml
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\System.Web.Http.WebHost.xml
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\bin\DAL(Data Access Layer).pdb
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.AssemblyReference.cache
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CoreCompileInputs.cache
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.csproj.CopyComplete
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.dll
+H:\3Ravi\Maryam\InventoryManagement\APIs_Layer\obj\Debug\APIs_Layer.pdb

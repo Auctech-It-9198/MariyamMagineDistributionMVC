@@ -1,0 +1,22 @@
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BLL(Business Logic Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BLL(Business Logic Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BOL(Business Objects Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\bin\Release\DAL(Data Access Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BOL(Business Objects Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\bin\Release\DAL(Data Access Layer).pdb
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).csproj.AssemblyReference.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).csproj.CoreCompileInputs.cache
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).csproj.CopyComplete
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).dll
+D:\Ravi\On Running Project\All WebApplication\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BLL(Business Logic Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BLL(Business Logic Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BOL(Business Objects Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\bin\Release\DAL(Data Access Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\bin\Release\BOL(Business Objects Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\bin\Release\DAL(Data Access Layer).pdb
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).csproj.AssemblyReference.cache
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).csproj.CoreCompileInputs.cache
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).csproj.CopyComplete
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).dll
+G:\3Ravi\Maryam\InventoryManagement\BLL(Business Logic Layer)\obj\Release\BLL(Business Logic Layer).pdb

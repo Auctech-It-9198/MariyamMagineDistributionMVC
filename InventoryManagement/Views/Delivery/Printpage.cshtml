@@ -1,0 +1,796 @@
+﻿
+@{
+    //Layout = null;
+}
+
+<link href="~/assets/print/printcss.css" rel="stylesheet" />
+<style>
+    #printdiv {
+        display: none;
+    }
+
+    #prindiv2 {
+        display: none;
+    }
+    .notshow 
+    {
+        display:none
+    }
+</style>
+
+<div class="page-content fade-in-up">
+
+
+    <div class="ibox" id="printdiv">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Print From Supply</div>
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Vno</label>
+                        <input type="text" class="form-control" id="txtvno" disabled />
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Magazine</label>
+                        <select class="form-control input-sm" id="ddlmagzine" disabled>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label>Released Magazine</label>
+                        <select class="form-control input-sm" id="ddlrelmagazine" disabled>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3 mt-4 pl-5">
+                    <div class="form-group form-check mt-3">
+                        <input type="checkbox" class="form-check-input" id="chkfarwarder">
+                        <label class="form-check-label" for="chkfarwarder">Print Farwarder Address</label>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-md-6"></div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label style="color:white">Show Detials</label>
+                        <input type="button" id="btnshow" class="btn btn-block btn-info" value="Show" />
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label style="color:white">print Detials</label>
+                        <input type="button" id="btnprint" class="btn btn-block btn-success" value="Print" />
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label style="color:white">Reset Detials</label>
+                        <input type="button" id="btnreset" class="btn btn-block btn-danger" value="Reset" />
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+  
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Subscriber List</div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="selectAll">
+                <label class="form-check-label" for="selectAll">Select All</label>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="ibox-body">
+
+            <table id="tblsub" class="table table-bordered">
+                <thead style="background-color:#e4e4e4">
+                    <tr>
+                        <th></th>
+                        <th>SNo</th>
+                        <th>Order.No</th>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                        <th>Deliver Address</th>
+                        <th class="text-center">Printed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+            <div class="ibox notshow" >
+
+
+                <div class="ibox-body">
+
+                    <table id="tblprint">
+                        <tr>
+                            @*<td>
+                                    <div class="subname">
+                                        <p class="pp1">From : Maryam Magazine</p>
+                                        <p class="pp2">To : Sajid Hussain</p>
+                                        <p class="pp3">Order No : OR000001</p>
+                                        <p class="pp4">Mobile No : 8922057120</p>
+                                        <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                                    </div>
+                                </td>*@
+                        </tr>
+
+
+                    </table>
+
+
+
+
+                    @*<div class="prinarea" id="pretn">
+
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+                            <div class="subname2">
+                                <p class="pp1">From : Maryam Magazine</p>
+                                <p class="pp2">To : Sameena Hussain</p>
+                                <p class="pp3">Order No : OR000001</p>
+                                <p class="pp4">Mobile No : 8922057120</p>
+                                <p class="pp5">Address : 446/36 Mushab Gank, Chourah ,Lucknow -226003</p>
+                            </div>
+
+
+                        </div>*@
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        @section scripts
+{
+
+            <script src="~/assets/print/jQuery.print.js"></script>
+
+            <script>
+        var url = '';
+        var vtype = "Di";
+        $(function ()
+        {
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+
+            var vno = getUrlVars()["vno"];
+            vtype = getUrlVars()["vtype"];
+
+            if (typeof vno !== "undefined")
+            {
+
+                $("#txtvno").val(vno);
+                $("#printdiv").show();
+                $("#printdiv2").hide();
+                DisplayListforprint(vno, vtype, "0");
+            }
+            else
+            {
+                $("#printdiv2").show();
+                $("#printdiv").hide();
+            }
+
+ 
+
+
+        })
+
+        // Read a page's GET URL variables and return them as an associative array.
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+
+        // show
+        function DisplayListforprint(vno, vtype, isfarwarder)
+        {
+            $('#tblsub tbody ').empty();
+
+            $('#tblprint tr').empty();
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/DeliveryApi/DisplayListforprint?vno=" + vno + "&vtype=" + vtype + "&isfarwarder=" + isfarwarder,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    var rw = "";
+                    var rd="";
+                    if (response.Data.length > 0)
+                    {
+                        bindMagazine(data[0].mzid, data[0].mrid);
+
+                        for (var i = 0; i < data.length; i++)
+                        {
+                            var la = data[i].address.split("_"); //0 aadress 1 pincode 2 country 3 state 4 city 5 arara 6 name 7 mobile
+                            rd += "<tr>";
+                            rd += "<td><input type='checkbox'    name='chkdel' class='chkclassdel' /></td>";
+                            rd += "<td>" + parseInt(i + 1) + "</td>";
+                            rd += "<td>" + data[i].orderno + "</td>";
+
+                            rd += "<td>" + data[i].name +"</td>";
+                            rd += "<td>" + data[i].mobile + "</td>";
+                            rd += "<td>" + data[i].localadress + "</td>";
+                            rd += "<td>" + la[0] + ', ' + la[3] + ', ' + la[4] + ', ' + la[5] + ', ' + la[1] +', '+la[6]+', '+la[7]+"</td>";
+                            rd += "<td class='notshow'>" + data[i].msid + "</td>";
+                            rd += "<td class='notshow' >" + data[i].lvno + "</td>";
+                            rd += "<td class='notshow' >" + data[i].vno + "</td>";
+                          
+                            rd += "<td class='notshow' >" + data[i].isfarwarder + "</td>";
+                            rd += "<td class='notshow' >" + data[i].farwarderid + "</td>";
+                            rd += "<td class='text-center' ><span class='label label-success'>" + data[i].printcount + "</span></td>";
+                            rd += "</tr>";
+
+
+                            //var ld = data[i].address.split("_"); //0 aadress 1 pincode 2 country 3 state 4 city 5 arara 6 name 7 mobile
+                            //rw += "<td>";
+                            //rw += '<div class="subname">';
+                            //rw += '<p class="pp1">From : Maryam Magazine</p>';
+                            //rw += '<p class="pp2">To : '+ld[6]+'</p>';
+                            //rw += '<p class="pp3">Order No : '+data[i].orderno+'</p>';
+                            //rw += '<p class="pp4">Mobile No : '+ld[7]+'</p>';
+                            //rw += '<p class="pp5">Address : ' + ld[0] + ', ' + ld[3] + ', ' + ld[4] + ', ' + ld[5] + ' - ' + ld[1] +'</p>';
+                            //rw += '</div>';
+                            //rw += "</td>";
+
+                        }
+
+                       /* $('#tblprint tr').append(rw);*/
+                        $('#tblsub tbody ').append(rd);
+                    }
+
+
+
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+
+
+        }
+
+
+        // get Record
+        $("#btnshow").on("click", function () {
+
+            var vno = $("#txtvno").val();
+            var isfrdwe = 0;
+            if ($("#chkfarwarder").prop('checked'))
+            {
+                isfrdwe = 1;
+            }
+
+            DisplayListforprint(vno, vtype, isfrdwe);
+
+
+
+        })
+
+
+        // print
+        $("#btnprint").on("click", function () {
+
+            printrecordsave();
+
+            //$("#tblprint").print();
+            //return (false);
+
+
+
+        });
+               
+                $("#btnreset").on('click', function () {
+
+                    $.toast({ heading: 'Warning', text: 'Record Reset ! ', icon: 'success', position: 'top-right', stack: false });
+                    location.href = location.href;
+
+                })
+
+                function printrecordsave()
+                {
+                    var Delivery = DataObj();
+                    var stockcheck = Delivery.length;
+                    if (stockcheck == "0") {
+                        $.toast({ heading: 'Warning', text: 'Check at Lest one Subscriber ! ', icon: 'success', position: 'top-right', stack: false });
+                        return false;
+                    }
+
+                
+                    $.ajax({
+                        url: url + "/api/DeliveryApi/AddPrint",
+                        type: "POST",
+                        contentType: "application/json;charset=utf-8",
+                        data: JSON.stringify(Delivery),
+                        success: function (response) {
+                            if (response.Result == 'True')
+                            {
+                                $.toast({ heading: 'sucess', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+                               
+                            }
+                            else {
+                                $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+
+                            }
+                        },
+                        complete: function (response)
+                        {
+                            printtableforprintrecord();
+                        },
+                        error: function (response) {
+
+                        }
+                    });
+
+
+                }
+                //-------------------
+                function printtableforprintrecord()
+                {
+
+                    var rw = "";
+                    $('#tblsub tbody tr').each(function (i) {
+                        var row = $(this);
+                        var chk = row.find('input[type="checkbox"]:checked').is(':checked');
+
+                        if (chk == true) {
+
+                            var userdetails = row.find("td").eq(5).html();
+                            var details = row.find("td").eq(6).html();
+
+                           
+                            var ld = details.split(","); //0 aadress 1 pincode 2 country 3 state 4 city 5 arara 6 name 7 mobile
+                            var la = userdetails.split("_"); //0 aadress 1 pincode 2 country 3 state 4 city 5 arara 6 name 7 mobile
+                            rw += "<td>";
+                            rw += '<div class="subname">';
+                            rw += '<p class="pp1">From : Maryam Magazine</p>';
+                            rw += '<p class="pp3">Order No : ' + row.find("td").eq(2).html() + '</p>';
+                            rw += '<p class="pp1">Address</p>';
+                            rw += '<p class="pp5">' + la[6] + '</br>' + la[7] + '</br>' + la[0] + ', ' + la[3] + ', ' + la[4] + ', ' + la[5] + ' - ' + la[1] + '</p>';
+                            rw += '<hr/>';
+                            rw += '<p class="pp1">Delivery Address</p>';
+                            rw += '<p class="pp5">' + ld[5] + '</br>' + ld[6] + '</br>' + ld[0] + ', ' + ld[1] + ', ' + ld[2] + ', ' + ld[3] + ' - ' + ld[4] + '</p>';
+                            rw += '</div>';
+                            rw += "</td>";
+
+                        }
+
+                    })
+
+                    $('#tblprint tr').append(rw);
+
+                     $("#tblprint").print();
+                     return (false);
+
+                }
+
+
+
+                function DataObj() {
+
+                    var Deliver = new Array();
+                    isfarwarder = "0";
+                    if ($('#chkfarwarder').prop("checked") == true)
+                    {
+                        isfarwarder = "1";
+                    }
+
+                    $('#tblsub tbody tr').each(function (i)
+                    {
+                        var row = $(this);
+
+                        var chk = row.find('input[type="checkbox"]:checked').is(':checked');
+
+                        if (chk == true)
+                        {
+                          
+                            var Delivery = {};
+                            Delivery.orderno = row.find("td").eq(2).html();
+                            Delivery.name = row.find("td").eq(3).html();
+                            Delivery.mobile = row.find("td").eq(4).html();
+                            Delivery.localadress = row.find("td").eq(5).html();
+                            Delivery.farwarderaddress = row.find("td").eq(6).html();
+                            Delivery.msid = row.find("td").eq(7).html();
+                            Delivery.lvno = row.find("td").eq(8).html();
+                            Delivery.vno = row.find("td").eq(9).html();
+                            Delivery.farwarderstatus = row.find("td").eq(10).html();
+                            Delivery.farwarderid = row.find("td").eq(11).html();
+                            Delivery.mzid = $("#ddlmagzine").val();
+                            Delivery.mzname = $("#ddlmagzine option:selected").text();
+                            Delivery.mrid = $("#ddlrelmagazine").val();
+                            Delivery.mrname = $("#ddlrelmagazine option:selected").text();
+                            Delivery.isfarwarder = isfarwarder;
+                            Deliver.push(Delivery);
+                            
+
+                        }
+
+                    })
+
+                    return Deliver;
+                }
+
+
+                //bind Magazine
+                function bindMagazine(mzid,mrid)
+                {
+
+                    $.ajax({
+                        url: url + "/api/Comman/Magzinebind",
+                        dataType: "json",
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (response) {
+
+                            var data = response.Data;
+                            if (response.Data.length > 0) {
+
+
+
+                                var s = '<option value="0">Select All Magzine</option>';
+                                for (var i = 0; i < data.length; i++) {
+                                    s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                                }
+                                $("#ddlmagzine").html(s);
+
+                                $("#ddlmagzine").val(mzid);
+
+
+                                bindReleasedMagazine(mzid, mrid);
+                            }
+
+
+                        },
+                        error: function (response)
+                        {
+                            response([{ label: 'No results found.', value: "" }]);
+                        },
+                        failure: function (response) {
+                            response([{ label: 'No results found.', value: "" }]);
+                        }
+                    });
+
+                }
+
+
+
+                //bind released Magazine
+                function bindReleasedMagazine(mzid, mrid)
+                {
+
+                    $("#ddlrelmagazine").html("");
+
+
+                    $.ajax({
+                        url: url + "/api/Comman/Releasedmagazine?mzid=" + mzid,
+                        dataType: "json",
+                        type: "GET",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (response) {
+
+
+                            try {
+                                var data = response.Data;
+                                if (response.Data.length > 0) {
+
+                                    var s = '<option value="0">Select released Magzine</option>';
+                                    for (var i = 0; i < data.length; i++) {
+                                        s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                                    }
+                                    $("#ddlrelmagazine").html(s);
+
+
+                                    $("#ddlrelmagazine").val(mrid);
+
+                                }
+                            }
+                            catch (err) {
+                                $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                            }
+
+
+                        },
+                        error: function (response) {
+                            $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                        },
+                        failure: function (response) {
+                            $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                        }
+                    });
+
+                }
+
+                //
+                $('#selectAll').click(function () {
+
+                    if (this.checked) {
+                        $(".chkclassdel").prop("checked", true);
+                    } else {
+                        $(".chkclassdel").prop("checked", false);
+                    }
+                });
+            </script>
+        }

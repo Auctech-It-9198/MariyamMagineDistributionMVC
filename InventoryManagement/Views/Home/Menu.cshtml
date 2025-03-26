@@ -1,0 +1,31 @@
+﻿@model IEnumerable<BOL_Business_Objects_Layer_.Menu>
+
+
+<ul class="side-menu metismenu">
+    @{
+        foreach (var menu in Model)
+        {
+            if (menu.MenuPer == "True")
+            {
+                <li>
+                    <a class="@menu.A_Class" href="@menu.URL">
+                        <i class="@menu.Fa_Icon"></i>
+                        <span class="nav-label">@menu.MenuName</span><i class="@menu.Arrow"></i>
+                    </a>
+                    @if (menu.submenus.Count > 0)
+                    {
+                        <ul class="nav-2-level collapse">
+                            @foreach (var submenu in menu.submenus)
+                            {
+                                if (submenu.SubMenuPer == "True")
+                                {
+                                    <li><a href="@submenu.URL">@submenu.SubMenuName</a></li>
+                                }
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+        }
+    }
+</ul>

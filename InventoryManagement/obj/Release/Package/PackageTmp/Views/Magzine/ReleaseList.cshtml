@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewBag.Title = "ReleaseList";
+}
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Magazine Released list</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+
+                <a href="Issue" class="btn btn-lg  btn-primary abtncolr">Release New Magazine</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered" id="tbl_magzineRelease">
+                    <thead>
+                        <tr>
+                            <th>SNo.</th>
+                            <th>Magazine No</th>
+                            <th>Magazine Name</th>
+                            <th>Magazine Title</th>
+                            <th>Released Number</th>
+                            <th>Released Month</th>
+                            <th>Stock</th>
+                            <th>IsPublish</th>
+                            <th class="text-center"></th>
+                            <th class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/assets/sweetalert/sweetalert.min.js"></script>
+    <script>
+       var url = '';
+    var compcode = '';
+        $(function () {
+            compcode = '@Request.Cookies["inventroyV1"]["compcode"].ToString().Trim()';
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            localStorage.setItem('MRId', "");
+            localStorage.setItem('editmode', false);
+            DisplayList();
+        });
+        function DisplayList() {
+            $('#tbl_magzineRelease').DataTable({
+                "sAjaxSource": "/Magzine/DisplayReleaseListPagewise",
+                "bServerSide": true,
+                "bDestroy": true,
+                "bProcessing": true,
+                "bSearchable": true,
+                "order": [[0, 'desc']],
+                "lengthChange": true,
+                responsive: true,
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                dom: 'Bfrtip',
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                "language": {
+                    "emptyTable": "No record found.",
+                    "processing":
+                        '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+                },
+                "columns": [
+                    {
+                        bSortable: false,
+                        render: function (data, type, row, meta) {
+                            return meta.row + meta.settings._iDisplayStart + 1;
+                        }
+                    },
+                    { "data": "MagzineNumber" },
+                    { "data": "MagzineName" },
+                    { "data": "MagzineReleaseTitle", width: 200 },
+                    { "data": "MagzineReleaseCode"},                    
+                    { "data": "ReleaseMonth" },
+                    { "data": "Stock" },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            if (full.Publish == "True") {
+                                return '<span class="label label-info">Publish</span>';
+                            }                           
+                            else {
+                                return '<span class="label label-danger">Un-Publish</span>';
+                            }
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnEdit" class="btn btn-info btn-sm" title="Edit" data-MRId=' + full.MagzineReleaseId + ' href="javascript:;"><i class="fa fa-edit"></i></a>';
+                        }
+                    },
+                    {
+                        bSortable: false,
+                        "render": function (data, type, full, meta) {
+                            return '<a id="btnDelete" class="btn btn-danger btn-sm" title="Delete" data-MRId=' + full.MagzineReleaseId + ' href="javascript:;"><i class="fa fa-remove"></i></a>';
+                        }
+                    }
+                ]
+            });
+        }
+        //
+        $('#tbl_magzineRelease tbody').on('click', '#btnEdit', function () {
+            var MRId = $(this).attr('data-MRId');
+            localStorage.setItem("MRId", MRId);
+            localStorage.setItem("editmode", true);
+            window.location.href = "/Magzine/Issue";
+        })
+        //function for deleting record
+        $('#tbl_magzineRelease tbody').on('click', '#btnDelete', function () {
+            var MRId = $(this).attr('data-MRId');
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/Magzine/DeleteReleaseMagzine?MRId=" + MRId,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response)
+                    {
+                      
+                        if (response.Result == 'True')
+                        {
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+                            $("#tbl_magzineRelease").dataTable().fnDraw();
+                        }
+                        else
+                        {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+    </script>
+}

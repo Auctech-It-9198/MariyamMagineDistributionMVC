@@ -1,0 +1,984 @@
+﻿
+@{
+    ViewBag.Title = "Add-Deleivery";
+}
+
+<style>
+    .notshow {
+        display: none;
+    }
+</style>
+
+<link href="~/assets/sweetalert/sweetalert.css" rel="stylesheet" />
+<div class="page-content fade-in-up">
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Supply List</div>
+            <div class="ibox-tools">
+                @*<a href="Add" class="btn btn-lg  btn-primary abtncolr">Add New Supply</a>*@
+            </div>
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Magazine</label>
+                        <select class="form-control input-sm" id="ddlmagzine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Released Magazine</label>
+                        <select class="form-control input-sm" id="ddlrelmagazine">
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Available Stock</label>
+                        <input type="text" class="form-control" id="txtstock" disabled />
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="ibox">
+
+
+        <div class="ibox-head">
+            <div class="ibox-title">Filter List</div>
+
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <select class="form-control input-sm" id="ddcountry">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct State</label>
+                                <select class="form-control input-sm" id="ddlstate">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct City</label>
+                                <select class="form-control input-sm" id="ddlcity">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct Area</label>
+                                <select class="form-control input-sm" id="ddlarea">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct Member Type</label>
+                                <select class="form-control input-sm" id="ddlmtype">
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Selct Gender</label>
+                                <select class="form-control input-sm" id="ddlgender">
+                                    <option value="0">ALL</option>
+                                    <option value="m">Male</option>
+                                    <option value="f">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Select Type</label>
+                                <select class="form-control input-sm" id="ddltype">
+                                    <option value="0">ALL</option>
+                                    <option value="A">Active</option>
+                                    <option value="E">Expired</option>
+                                    <option value="G">Grace</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-2 mt-2">
+                            <div class="form-group">
+                                <input type="button" id="btnsearch" class="btn btn-primary mt-5" style="margin-top:20px!important;" value="Search" />
+                                <input type="button" id="btnreset" class="btn btn-danger mt-5 ml-2" style="margin-top:20px!important;" value="Reset" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <div class="ibox">
+
+        <div class="ibox-head">
+            <div class="ibox-title">Subscriber List</div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="selectAll">
+                <label class="form-check-label" for="selectAll">Select All</label>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <table class="table table-bordered" id="tbldilivery">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>SNo</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Expmonth</th>
+                            <th>ExpDate</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="ibox">
+
+
+
+        <div class="ibox-body">
+            <div class="row">
+
+                <div class="col-md-10"></div>
+                <div class="col-md-2">
+                    <input type="button" class="btn btn-success btn-block" value="Save" id="btnsend" />
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+<script src="~/assets/sweetalert/sweetalert.min.js"></script>
+@section scripts{
+
+    <script>
+       var url = '';
+        var compcode = '';
+        var vtype = "Di";
+        $(function () {
+
+
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+            localStorage.setItem('mscode', "");
+            localStorage.setItem('editmode', false);
+            bindCountry();
+            bindMemberType();
+            bindMagazine();
+           //DisplayList('&nbsp;', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');
+
+
+
+            // select event Magazine ddl
+            $("#ddlmagzine").change(function () {
+
+                /* alert($('option:selected', this).text());*/
+                var mzid = $("#ddlmagzine").val();
+
+                bindReleasedMagazine(mzid);
+                $("#txtstock").val('0');
+                DisplayList('&nbsp;', '0', '0', '0', '0', '0', '0', '0', mzid, '0', '0', '0');
+
+
+            });
+
+
+            // select event Magazine ddl
+            $("#ddlrelmagazine").change(function () {
+
+                var mzid = $("#ddlmagzine").val();
+                var mrid = $("#ddlrelmagazine").val();
+                avlstock(mzid,mrid);
+
+
+            });
+
+
+        });
+        //new
+        // avl stock
+        function avlstock(mzid, mrid) {
+
+            $("#txtstock").val("0");
+
+            $.ajax({
+                url: url + "/api/Comman/Magazineavlstock?mzid=" + mzid + "&mrid=" + mrid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+                        if (data[0].stock != "") {
+                            $("#txtstock").val(data[0].stock);
+                        }
+                        else {
+                            $.toast({ heading: 'Warning', text: 'No Stock Avalable', icon: 'warning', position: 'top-right', stack: false });
+
+                        }
+                    }
+                    else {
+                        $.toast({ heading: 'Warning', text: 'No Stock Avalable', icon: 'warning', position: 'top-right', stack: false });
+                    }
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+
+        //old
+        function avlbalnce(mrid)
+        {
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/Availstock?mrid=" + mrid,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*  console.log(response)*/
+
+                    $("#txtstock").val(response.Data);
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+
+        }
+
+
+
+
+        $('#tbl_member tbody').on('click', '#btnEdit', function () {
+            var mscode = $(this).attr('data-mscode');
+            localStorage.setItem("mscode", mscode);
+            localStorage.setItem("editmode", true);
+            window.location.href = "/Subscriber/Add";
+        })
+        //
+
+        $('#tbl_member tbody').on('click', '.forworder', function (e) {
+            e.preventDefault();
+            var mscode = $(this).attr('data-mscode');
+            var Name = $(this).attr('data-Name');
+            var title = Name + "(" + mscode + ")";
+            $("#tbl_child > tbody").empty();
+            $.ajax({
+                url: url + "/api/SubscriberApi/GetForwarderChildListDetails?mscode=" + mscode,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result.Data)
+
+                    if (result.Status == true) {
+
+                        var data = result.Data;
+                        for (var i = 0; i < data.length; i++) {
+                            var tr = "<tr>";
+                            tr += "<td>" + data[i].SubscriberId +"</td>";
+                            tr += "<td>" + data[i].Name +"</td>";
+                            tr += "<td>" + data[i].Mobile + "</td>";
+                            if (data[i].Gender == "M") {
+                                tr += "<td>Male</td>";
+                            }
+                            else {
+                                tr += "<td>Female</td>";
+                            }
+                            tr += "<td>" + data[i].MemberType +"</td>";
+                            tr += "<td>" + data[i].Discount +"</td>";
+
+                            if (data[i].IsDeActive == "False") {
+                                tr += "<td>Active</td>";
+                            }
+                            else {
+                                tr += "<td>De-Active</td>";
+                            }
+                            tr += "</tr>";
+
+                            $("#tbl_child > tbody").append(tr);
+                        }
+                        $("#myModal .modal-title").html(title);
+                        $("#myModal").modal("show");
+                    }
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        })
+
+
+        //function for deleting record
+        $('#tbl_member tbody').on('click', '#btnDelete', function () {
+            var mscode = $(this).attr('data-mscode');
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Record ! ",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            }, function () {
+                $.ajax({
+                    url: url + "/api/SubscriberApi/Delete?mscode=" + mscode,
+                    type: "Get",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.Result == 'True') {
+                            swal({ title: 'Success', type: 'success', text: response.Message });
+                            $("#tbl_member").dataTable().fnDraw();
+                        }
+                        else {
+                            swal({ title: 'Success', type: 'error', text: response.Message });
+                        }
+
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            });
+
+        });
+
+        //
+        function bindCountry() {
+
+            $("#ddcountry").html("");
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayCountryList",
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].CountryId + '">' + data[i].CountryName + '</option>';
+                        }
+                        $("#ddcountry").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+        //
+        $("#ddcountry").on('change', function () {
+            bindState($(this).val());
+        });
+
+        function bindState(countryid) {
+
+            $("#ddlstate").html("");
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayStateList?cid=" + countryid,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].StateId + '">' + data[i].StateName + '</option>';
+                        }
+                        $("#ddlstate").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+
+        $("#ddlstate").on('change', function ()
+        {
+            bindCity($("#ddcountry :selected").val(), $(this).val());
+        });
+
+        function bindCity(countryid, stateid) {
+
+            $("#ddlcity").html("");
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayCityList?cid=" + countryid + "&sid=" + stateid,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].CityId + '">' + data[i].CityName + '</option>';
+                        }
+                        $("#ddlcity").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+        //
+
+        $("#ddlcity").on('change', function ()
+        {
+            bindArea($("#ddcountry :selected").val(), $("#ddlstate :selected").val(), $(this).val());
+
+        });
+
+        function bindArea(countryid, stateid, cityid)
+        {
+
+            $("#ddlarea").html("");
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayAreaList?cid=" + countryid + "&sid=" + stateid + "&cityid=" + cityid,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].AreaId + '">' + data[i].AreaName + '</option>';
+                        }
+                        $("#ddlarea").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+        //
+        $("#btnsearch").on('click', function () {
+
+            var search = "";
+            var cid = 0;
+            var sid = 0;
+            var cityid = 0;
+            var areaid = 0;
+            var isdeactive = 0;
+            var mtype = 0;
+            var gender = 0;
+            var mzid = 0;
+            var mrid = 0;
+            var gperiods = 0;
+            var cstatus = 0;
+
+
+
+
+            if (typeof $("#ddcountry :selected").val() !== "undefined") {
+
+                cid = $("#ddcountry :selected").val();
+            }
+            if (typeof $("#ddlstate :selected").val() !== "undefined") {
+                sid = $("#ddlstate :selected").val();
+            }
+            if (typeof $("#ddlcity :selected").val() !== "undefined") {
+                cityid = $("#ddlcity :selected").val();
+            }
+            if (typeof $("#ddlarea :selected").val() !== "undefined")
+            {
+                areaid = $("#ddlarea :selected").val();
+            }
+
+
+            if (typeof $("#ddlmtype :selected").val() !== "undefined") {
+                mtype = $("#ddlmtype :selected").val();
+            }
+            if (typeof $("#ddlgender :selected").val() !== "undefined") {
+                gender = $("#ddlgender :selected").val();
+            }
+
+            if (typeof $("#ddltype :selected").val() !== "undefined") {
+                cstatus = $("#ddltype :selected").val();
+            }
+
+            if (typeof $("#ddlmagzine :selected").val() !== "undefined") {
+                mzid = $("#ddlmagzine :selected").val();
+            }
+
+            DisplayList(search, cid, sid, cityid, areaid, isdeactive, mtype, gender, mzid, mrid, gperiods, cstatus);
+
+        });
+        //
+        function bindMemberType() {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayMemberTypeList",
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    /*console.log(response)*/
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">ALL</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MemberTypeId + '">' + data[i].MemberTypeName + '</option>';
+                        }
+                        $("#ddlmtype").html(s);
+
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+
+                }
+            });
+        }
+
+        //bind Magazine
+        function bindMagazine() {
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+
+
+
+                        var s = '<option value="0">Select All Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+
+        //bind released Magazine
+        function bindReleasedMagazine(mzid)
+        {
+
+            $("#ddlrelmagazine").html("");
+
+
+            $.ajax({
+                url: url + "/api/Comman/Releasedmagazine?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response)
+                {
+
+
+                    try
+                    {
+                        var data = response.Data;
+                        if (response.Data.length > 0)
+                        {
+
+                            var s = '<option value="0">Select released Magzine</option>';
+                            for (var i = 0; i < data.length; i++)
+                            {
+                                s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                            }
+                            $("#ddlrelmagazine").html(s);
+
+                        }
+                    }
+                    catch (err)
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                    }
+
+
+                },
+                error: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                },
+                failure: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                }
+            });
+
+        }
+
+
+        //
+        $("#btnsend").on('click', function ()
+        {
+
+            //var name = $("#ddlmtype option:selected ").text();
+            //alert(name);
+
+
+
+
+           /* $.toast({ heading: 'Warning', text: 'Record Send To Dispatch ! ', icon: 'success', position: 'top-right', stack: false });*/
+            var Delivery = DataObj();
+            var stockcheck = Delivery.length;
+            var cstock = $("#txtstock").val();
+
+            if (parseInt(stockcheck) > parseInt(cstock))
+            {
+                $.toast({ heading: 'Warning', text: 'Not Enough Stock To Dispatch ! ', icon: 'success', position: 'top-right', stack: false });
+                return false;
+            }
+
+            if (stockcheck == "0")
+            {
+                $.toast({ heading: 'Warning', text: 'Check at Lest one Subscriber ! ', icon: 'success', position: 'top-right', stack: false });
+                return false;
+            }
+
+            $.ajax({
+                url: url + "/api/DeliveryApi/Add",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(Delivery),
+                success: function (response)
+                {
+                    if (response.Result == 'True')
+                    {
+                        $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+                        location.href = "Index";
+                    }
+                    else
+                    {
+                        $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+
+                    }
+                },
+                error: function (response)
+                {
+
+                }
+            });
+
+
+
+
+
+        })
+
+        //
+        $("#btnreset").on('click', function () {
+
+            $.toast({ heading: 'Warning', text: 'Record Reset ! ', icon: 'success', position: 'top-right', stack: false });
+            location.href = location.href;
+
+        })
+
+
+        $('#selectAll').click(function () {
+
+
+            if (this.checked)
+            {
+                $(".chkclassdel").prop("checked", true);
+            } else {
+                $(".chkclassdel").prop("checked", false);
+            }
+        });
+
+
+        function DataObj() {
+
+            var Deliver = new Array();
+
+
+
+            var cid = 0;
+            var sid = 0;
+            var cityid = 0;
+            var areaid = 0;
+            var isdeactive = 0;
+            var mtype = 0;
+            var gender = 0;
+            var mzid = 0;
+            var mrid = 0;
+            var gperiods = 0;
+            var cstatus = 0;
+           
+
+
+            if (typeof $("#ddcountry :selected").val() !== "undefined") {
+
+                cid = $("#ddcountry :selected").val();
+            }
+            if (typeof $("#ddlstate :selected").val() !== "undefined") {
+                sid = $("#ddlstate :selected").val();
+            }
+            if (typeof $("#ddlcity :selected").val() !== "undefined") {
+                cityid = $("#ddlcity :selected").val();
+            }
+            if (typeof $("#ddlarea :selected").val() !== "undefined") {
+                areaid = $("#ddlcity :selected").val();
+            }
+
+
+            if (typeof $("#ddlmtype :selected").val() !== "undefined") {
+                mtype = $("#ddlmtype :selected").val();
+            }
+
+            if (typeof $("#ddlgender :selected").val() !== "undefined") {
+                gender = $("#ddlgender :selected").val();
+            }
+
+            if (typeof $("#ddltype :selected").val() !== "undefined") {
+                cstatus = $("#ddltype :selected").val();
+            }
+
+            if (typeof $("#ddlmagzine :selected").val() !== "undefined") {
+                mzid = $("#ddlmagzine :selected").val();
+            }
+
+
+            $('#tbldilivery tbody tr').each(function (i)
+            {
+                var row = $(this);
+
+                var chk = row.find('input[type="checkbox"]:checked').is(':checked');
+
+                if (chk == true)
+                { 
+                    
+                    var Delivery = {};
+                    Delivery.vtype = vtype;
+                    Delivery.sbid = row.find("td").eq(2).html();
+                    Delivery.msid = row.find("td").eq(3).html();
+                    Delivery.mscode = row.find("td").eq(4).html();
+                    Delivery.name = row.find("td").eq(5).html();
+                    Delivery.mobile = row.find("td").eq(6).html();
+                    Delivery.partytype = "M";
+                    Delivery.cid = cid;
+                    Delivery.sid = sid;
+                    Delivery.cityid = cityid;
+                    Delivery.areaid = areaid;
+                    Delivery.membertypeid = mtype;
+                    Delivery.gender = gender;
+                    Delivery.selecttype = cstatus; //selecttype
+                    Delivery.mzid = $("#ddlmagzine").val();
+                    Delivery.mzname = $("#ddlmagzine option:selected").text();
+                    Delivery.mrid = $("#ddlrelmagazine").val();
+                    Delivery.mrname = $("#ddlrelmagazine option:selected").text();
+                   
+
+
+                    Delivery.priceid = "0"// priceid
+                    Delivery.rate = "0"// rate
+                    Delivery.qty = "1"// qty
+                    Delivery.amt = "0";// amt
+                    Delivery.dis = "0";// dis
+                    Delivery.disamt = "0";// disamt
+                    Delivery.gst = "0";// gst
+                    Delivery.gstamt = "0";// gstamt
+                    Delivery.paybleamt = "0";// paybltamt
+                    Delivery.netamt = "0";// netamt
+                    Delivery.trantype = "s";
+                    Delivery.totalamt = "0";
+
+
+                    Deliver.push(Delivery);
+                }
+
+
+            })
+
+            return Deliver;
+    }
+
+
+        function DisplayList(search, cid, sid, cityid, areaid, isdeactive, mtype, gender, mzid, mrid, gperiods, cstatus) {
+
+            $("#tbldilivery tbody").empty();
+
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/DeliveryApi/DisplayListPagewise?search=" + search + "&cid=" + cid + "&sid=" + sid + "&cityid=" + cityid + "&areaid=" + areaid + "&deactive=" + isdeactive + "&mtype=" + mtype + "&gender=" + gender + "&mzid=" + mzid + "&mrid=" + mrid + "&gperiods=" + gperiods + "&cstatus=" + cstatus,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    var rw = "";
+                    if (response.Data.length > 0) {
+
+                        for (var i = 0; i < data.length; i++)
+                        {
+                            rw += "<tr>";
+                            rw += "<td><input type='checkbox' id=" + data[i].sbid + "  value=" + data[i].sbid + " name='chkdel' class='chkclassdel' /></td>";
+                            rw += "<td>" + parseInt(i + 1) + "</td>";
+                            rw += "<td class='notshow'>" + data[i].sbid + "</td>";
+                            rw += "<td class='notshow'>" + data[i].msid + "</td>";
+                            rw += "<td class='notshow'>" + data[i].mscode + "</td>";
+                            rw += "<td>" + data[i].name + "</td>";
+                            rw += "<td>" + data[i].mobile + "</td>";
+                            rw += "<td>" + data[i].expmonthwithgrace + "</td>";
+                            rw += "<td>" + data[i].expdatewithgrace + "</td>";
+                            rw += "<td>" + data[i].cstatus + "</td>";
+                            rw += "</tr>";
+                        }
+                    }
+                    $("#tbldilivery tbody").append(rw);
+
+
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+
+
+        }
+        //
+
+
+    </script>
+}

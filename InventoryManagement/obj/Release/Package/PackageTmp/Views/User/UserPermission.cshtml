@@ -1,0 +1,413 @@
+﻿
+@{
+    ViewBag.Title = "UserPermission";
+}
+<style>
+    .switch {
+        display: inline-block;
+        height: 34px!important;
+        position: relative;
+        width: 60px!important;
+    }
+
+        .switch input {
+            display: none;
+        }
+    .slider {
+        position: relative;
+        width: 100%;
+        height: 34px!important;
+    }
+    .slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: .4s;
+    }
+
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+        }
+
+    input:checked + .slider {
+        background-color: #66bb6a;
+    }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+<div class="row">
+    <div id="breadcrumbs-wrapper" data-image="/app-assets/images/gallery/breadcrumb-bg.jpg">
+        <!-- Search for small screen-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>Users View</span></h5>
+                </div>
+                <div class="col s12 m6 l6 right-align-md">
+                    <ol class="breadcrumbs mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">User</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Users Permission
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12">
+        <div class="container">
+            <!-- users view start -->
+            <div class="section users-view">
+                <!-- users view card data start -->
+                <div class="card">
+                    <div class="contact-header">
+                        <div class="col s12 m12">
+                            <h6 class="ml-1">User Role & Permission</h6>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s12 m4">
+                                <table class="striped">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="input-field col s12">
+                                                    <select id="ddlUser"></select>
+                                                    <label>Select User</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="input-field col s12">
+                                                    <select id="ddlCompany"></select>
+                                                    <label>Select Compnay</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="input-field col s12">
+                                                    <select id="ddlMenu"></select>
+                                                    <label>Select Menu Item</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong><h6 id="lblMenuName" class="fa-bold"></h6></strong></td>
+                                            <td class="users-view-role" id="tdchk">
+                                               
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <button class="btn cyan waves-effect waves-light right" type="button" id="btnAdd">
+                                            Save
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </div>                                   
+                                    <div class="col s12 m6">
+                                        <button type="button" class="btn btn-danger waves-effect waves-light red accent-2">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12 m8">
+                                <table class="responsive-table" id="tbl_SMenu">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- users view card data ends -->
+            </div>
+        </div>
+        <div class="content-overlay"></div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/app-assets/js/vendors.min.js"></script>
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/app-assets/vendors/data-tables/js/jquery.dataTables.min.js"></script>
+    <script src="~/app-assets/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
+
+
+    <script>
+    var url = '';
+    $(function () {
+        url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+
+        getUser(url);
+    });
+        $('#ddlUser').on('change', function () {
+            //alert($(this).val());
+            getComapny($(this).val());
+        });
+
+        //function to Dispaly Users
+        function getUser() {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayUserList",
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select a User</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].UserId + '">' + data[i].UserName + '</option>';
+                        }
+                        $("#ddlUser").html(s);
+                        $("#ddlUser").formSelect();
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                }
+            });
+        }
+
+        //function to Dispaly company
+        function getComapny(UserId) {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/GetComapnyList?UserId=" + UserId,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select a Company</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].Compcode + '">' + data[i].CompName + '</option>';
+                        }
+                        $("#ddlCompany").html(s);
+                        $("#ddlCompany").formSelect();
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                }
+            });
+        }
+
+        //
+        $('#ddlCompany').on('change', function () {
+            //alert($(this).val());
+            getMenu($('#ddlUser :selected').val(), $(this).val());
+        });
+
+
+        //function to Dispaly Menu
+        function getMenu(UserId, Compcode) {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/DisplayMenuList?UserId=" + UserId + "&Compcode=" + Compcode,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select a Menu Item</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MenuId + '">' + data[i].MenuName + '</option>';
+                        }
+                        $("#ddlMenu").html(s);
+                        $("#ddlMenu").formSelect();
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+
+        //
+        $('#ddlMenu').on('change', function () {
+            $('#lblMenuName').text($("#ddlMenu :selected").text());
+            $('#chkmnu').show();
+            getMenu_SubMenu_for_Permission($('#ddlUser :selected').val(), $('#ddlCompany :selected').val(), $(this).val());
+        });
+
+        //
+        function getMenu_SubMenu_for_Permission(UserId, Compcode, MenuId) {
+            $.ajax({
+                type: 'GET',
+                url: url + "/api/Comman/GetMenuList_for_Permission?UserId=" + UserId + "&Compcode=" + Compcode + "&MenuId=" + MenuId,
+                data: {},
+                contentType: "application/json;charset=utf-8",
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response)
+                    var data = response.Data;
+                    if (data[0].MenuPer == "True") {
+                        $('#tdchk').html(' <label class="switch" for="checkbox" id="chkmnu"><input type="checkbox" id="checkbox" checked /><div class="slider round"></div></label>')
+                    }
+                    else {
+                        $('#tdchk').html(' <label class="switch" for="checkbox" id="chkmnu"><input type="checkbox" id="checkbox" /><div class="slider round"></div></label>')
+                    }
+                    
+                    var submenues = data[0].submenus;
+                    if (submenues.length > 0) {
+                        var tr = '<thead><tr><th>Module Permission</th><th>Add</th><th>Edit</th><th>Delete</th><th>View</th><th>Print</th><th>Menu</th></tr></thead><tbody>';
+                        for (var i = 0; i < submenues.length; i++) {
+                            tr += '<tr>';
+                            tr += '<td>' + submenues[i].SubMenuName + '</td>';
+
+                            if (submenues[i].AddPer == "True") {
+                                tr += '<td><label><input type="checkbox" checked /><span></span></label></td>';
+                            }
+                            else {
+                                tr += '<td><label><input type="checkbox" /><span></span></label></td>';
+                            }
+
+                            //
+                            if (submenues[i].EditPer == "True") {
+                                tr += '<td><label><input type="checkbox" checked /><span></span></label></td>';
+                            }
+                            else {
+                                tr += '<td><label><input type="checkbox" /><span></span></label></td>';
+                            }
+
+                            //
+                            if (submenues[i].DeletePer == "True") {
+                                tr += '<td><label><input type="checkbox" checked /><span></span></label></td>';
+                            }
+                            else {
+                                tr += '<td><label><input type="checkbox" /><span></span></label></td>';
+                            }
+
+                            //
+                            if (submenues[i].ViewPer == "True") {
+                                tr += '<td><label><input type="checkbox" checked /><span></span></label></td>';
+                            }
+                            else {
+                                tr += '<td><label><input type="checkbox" /><span></span></label></td>';
+                            }
+
+                            //
+                            if (submenues[i].PrintPer == "True") {
+                                tr += '<td><label><input type="checkbox" checked /><span></span></label></td>';
+                            }
+                            else {
+                                tr += '<td><label><input type="checkbox" /><span></span></label></td>';
+                            }
+
+                            //
+                            if (submenues[i].SubMenuPer == "True") {
+                                tr += '<td><label><input type="checkbox" checked /><span></span></label></td>';
+                            }
+                            else {
+                                tr += '<td><label><input type="checkbox" /><span></span></label></td>';
+                            }
+                            tr += '<td style="display:none;">' + submenues[i].SubMenuId + '</td>';
+                            tr += '</tr></tbody>';
+                        }
+                        $("#tbl_SMenu").html(tr);
+                    }
+                    else {
+                        $("#tbl_SMenu").html('');
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+
+                }
+            });
+        }
+
+        //
+        //Add Data Function
+        $('#btnAdd').on('click', function () {
+            var objmenu = {};
+            var submenus = new Array();
+            var objmenu = {
+                UserId: $('#ddlUser :selected').val(),
+                MenuId: $('#ddlMenu :selected').val(),
+                Compcode: $('#ddlCompany :selected').val(),
+                MenuPer: $('#tdchk').find("#checkbox").prop('checked') == true ? "true" : "false",
+                IsApprove: $('#tdchk').find("#checkbox").prop('checked') == true ? "true" : "false"
+            };
+            $('#tbl_SMenu tbody tr').each(function (i) {
+                var row = $(this);
+                var UserPermission = {};
+                UserPermission.SubMenuId = row.find("td").eq(7).html();
+                UserPermission.AddPer = row.find("td").eq(1).find('input[type=checkbox]').prop('checked');
+                UserPermission.EditPer = row.find("td").eq(2).find('input[type=checkbox]').prop('checked');
+                UserPermission.DeletePer = row.find("td").eq(3).find('input[type=checkbox]').prop('checked');
+                UserPermission.ViewPer = row.find("td").eq(4).find('input[type=checkbox]').prop('checked');
+                UserPermission.PrintPer = row.find("td").eq(5).find('input[type=checkbox]').prop('checked');
+                UserPermission.SubMenuPer = row.find("td").eq(6).find('input[type=checkbox]').prop('checked');
+                UserPermission.UserId = $('#ddlUser :selected').val();
+                UserPermission.MenuId = $('#ddlMenu :selected').val();
+                UserPermission.Compcode = $('#ddlCompany :selected').val();
+                submenus.push(UserPermission);
+                if ($(this).find('input[type=checkbox]').prop('checked')) {
+                   
+                }
+            })
+            objmenu.submenus = submenus;
+            $.ajax({
+                url: url + "/api/User/AddPermission",
+                type: "POST", //First change type to method here
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(objmenu),
+                success: function (response) {
+                    if (response.Result == 'True') {
+                        swal({ title: 'Success', icon: 'success', text: response.Message, timer: 3000 });
+                        clearTextBox();
+                        $("#tbl_company tbody input[type=checkbox]").each(function () {
+                            $(this).prop("checked", false);
+                        });
+
+                    }
+                    else {
+                        swal({ title: 'Errror', icon: 'error', text: response.Message, timer: 5000 });
+                    }
+                },
+                error: function (response) {
+                    swal({ title: 'Errror', icon: 'error', text: response.responseJSON.Message, timer: 5000 });
+                    console.log(response);
+                }
+            });
+        });
+    </script>
+}

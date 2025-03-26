@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/app-assets/vendors/data-tables/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="~/app-assets/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+<div class="row">
+    <div id="breadcrumbs-wrapper" data-image="../app-assets/images/gallery/breadcrumb-bg.jpg">
+        <!-- Search for small screen-->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>Users List</span></h5>
+                </div>
+                <div class="col s12 m6 l6 right-align-md">
+                    <ol class="breadcrumbs mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">User</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Users List
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col s12">
+        <div class="container">
+            <!-- users list start -->
+            <section class="users-list-wrapper section">
+                <div class="users-list-table">
+                    <div class="card">
+                        <div class="card-content">
+                            <!-- datatable start -->
+                            <div class="responsive-table">
+                                <table id="users-list-datatable" class="table table-bordered">
+                                    <thead>
+                                        <tr>
+
+                                            <th>S.no</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>last activity</th>
+                                            <th>role</th>
+                                            <th>status</th>
+                                            <th>edit</th>
+                                            <th>view</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*<tr>
+
+                                                <td>300</td>
+                                                <td>
+                                                    <a href="page-users-view.html">dean3004</a>
+                                                </td>
+                                                <td>Dean Stanley</td>
+                                                <td>30/04/2019</td>
+                                                <td>Staff</td>
+                                                <td>
+                                                    <span class="chip green lighten-5"><span class="green-text">Active</span></span>
+                                                </td>
+                                                <td><a href="page-users-edit.html"><i class="material-icons">edit</i></a></td>
+                                                <td><a href="page-users-view.html"><i class="material-icons">remove_red_eye</i></a></td>
+                                            </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- datatable ends -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- users list ends -->
+        </div>
+        <div class="content-overlay"></div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/app-assets/js/vendors.min.js"></script>
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="~/app-assets/vendors/data-tables/js/jquery.dataTables.min.js"></script>
+    <script src="~/app-assets/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
+
+
+    <script>
+    var url = '';
+    $(function () {
+        url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+        getComapny(url);
+    });
+    //function to Dispaly company
+    function getComapny() {
+        
+        $.ajax({
+            type: 'GET',
+            url: url + "/api/User/Display_UserList",
+            data: {},
+            contentType: "application/json;charset=utf-8",
+            dataType: 'json',
+            success: function (response) {
+                console.log(response)
+                var data = response.Data;
+                if (response.Data.length > 0) {
+                    var tr = "";
+                    for (var i = 0; i < data.length; i++) {
+                        tr += '<tr>';
+                        tr += '<td>' + parseInt(i + 1) + '</td>';
+                        tr += '<td>' + data[i].UserName +'</td>';
+                        tr += '<td>' + data[i].Password + '</td>';
+                        tr += '<td>' + data[i].LastActivity + '</td>';
+                        if (data[i].UserType == 'Admin') {
+                            tr += '<td><span class="chip green lighten-5"><span class="green-text">Admin</span></span></td>';
+                        }
+                        else {
+                            tr += '<td><span class="chip red lighten-5"><span class="red-text">Staff</span></span></td>';
+                        }
+                        if (data[i].UserStatus == 'Active') {
+                            tr += '<td><span class="chip green lighten-5"><span class="green-text">Active</span></span></td>';
+                        }
+                        else {
+                            tr += '<td><span class="chip red lighten-5"><span class="red-text">De-Active</span></span></td>';
+                        }
+                        tr += '<td><a data-userid=' + data[i].UserId + ' href="/User/Add/' + Base64.encode(data[i].UserId.toString()) +'"><i class="material-icons">edit</i></a></td>';
+                        tr += '<td><a data-userid=' + data[i].UserId + ' href="/User/ViewDetails/' + Base64.encode(data[i].UserId.toString()) +'"><i class="material-icons">remove_red_eye</i></a></td>';
+                        //tr += '<td>' + response[i].Password + '</td>';
+                        tr += '</tr>';
+                    }
+                    $('#users-list-datatable tbody').append(tr);
+                    $("#users-list-datatable").DataTable({
+                        responsive: false,
+                        'columnDefs': [{
+                            "orderable": false,
+                            "targets": [0, 3, 6, 7]
+                        }]
+                    });
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+
+            }
+        });
+    }
+    </script>
+}

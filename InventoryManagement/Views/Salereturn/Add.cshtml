@@ -1,0 +1,1003 @@
+﻿
+@{
+    ViewBag.Title = "Sale-Return";
+}
+
+<style>
+    #tbl_master
+    {
+        width:100%;
+        border-collapse:collapse;
+        font-size:14px;
+    }
+
+        #tbl_master th, #tbl_master td {
+            padding: 2px;
+            margin: 0;
+        }
+    #tbl_master thead{
+
+        background-color:#83c0eb;
+
+    }
+   .tddropdown
+   {
+     width:200px;
+     display:block;
+   }
+    .wd-50px
+    {
+        width:50px;
+    }
+    .wd-100px {
+        width: 100px;
+    }
+    .bgred
+    {
+        background-color:red;
+    }
+    .totaltable
+    {
+        border-collapse:collapse;
+    }
+    .totaltable td {
+        border-bottom: solid 1px black;
+    }
+
+    .totaltable td:nth-child(2) {
+        text-align: left;
+        font-weight: 600;
+    }
+</style>
+
+<div class="page-content fade-in-up">
+
+
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title mgheader">Add New Sale Return</div>
+            <div class="ibox-tools">
+                @*<a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                    <a class="fullscreen-link"><i class="fa fa-expand"></i></a>*@
+                <a href="Index" class="btn btn-lg  btn-primary abtncolr">Back</a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>VNO</label>
+                        <input class="form-control" id="txtvno" type="text" disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input class="form-control" id="txtdate" type="date" placeholder="Enter Name">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label>Transaction Type</label>
+                        <select class="form-control input-sm" id="ddltrantype">
+
+                            <option value="0">Select</option>
+                            <option value="c">Cash</option>
+                            <option value="d">Credit</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Select Veder</label>
+                        <select class="form-control input-sm" id="ddlvendor">
+                        </select>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    @*// magzine add ledger*@
+    <div class="ibox">
+        <div class="ibox-head">
+            <div class="ibox-title">Magzine Detials</div>
+            <div class="ibox-tools">
+                <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
+                <a class="fullscreen-link"><i class="fa fa-expand"></i></a>
+            </div>
+        </div>
+        <div class="ibox-body">
+
+            <div class="row" style="overflow-y:scroll">
+
+
+                
+
+                    <table class="table table-bordered table-striped" id="tbl_master">
+                        <thead>
+                            <tr>
+
+                                <th class="td1">
+                                    <label>Select Magzine</label>
+                                    <select id="ddlmagzine" class="tddropdown"></select>
+                                </th>
+
+                                <th class="td1">
+                                    <label>Select Magzine Release</label>
+                                    <select id="ddlrelmagazine" class="tddropdown"></select>
+                                </th>
+
+                                <th>
+                                    <label>Stock</label>
+                                    <input type="text" id="txtavlstock" class="wd-50px" disabled />
+                                </th>
+
+
+                                <th>
+                                    <label>Rate</label>
+                                    <input type="text" id="txtrate" class="wd-50px allow_decimal" maxlength="4" onchange="setrate()" />
+                                </th>
+
+                                <th>
+                                    <label>Qty</label>
+                                    <input type="text" id="txtqty" class="wd-50px allow_numeric" maxlength="4" onchange="setrate()" />
+                                </th>
+
+
+                                <th>
+                                    <label>Amt</label>
+                                    <input type="text" id="txtamt" class="wd-100px" disabled />
+                                </th>
+
+                                <th>
+                                    <label>Dis%</label>
+                                    <input type="text" id="txtdis" class="wd-50px allow_decimal" maxlength="2" onchange="setrate()" />
+                                </th>
+                                <th>
+                                    <label>Dis Amt</label>
+                                    <input type="text" id="txtdisamt" class="wd-100px" disabled />
+                                </th>
+
+                                <th>
+                                    <label>Gst%</label>
+                                    <input type="text" id="txtgst" class="wd-50px" maxlength="2" disabled />
+                                </th>
+
+                                <th>
+                                    <label>Gst Amt</label>
+                                    <input type="text" id="txtgstamt" class="wd-100px" disabled />
+                                </th>
+
+                                <th>
+                                    <label>Payble Amt</label>
+                                    <input type="text" id="txtpaybleamt" class="wd-100px" disabled />
+                                </th>
+
+                                <th>
+                                    <label>Net Amt</label>
+                                    <input type="text" id="txtnetamt" class="wd-100px" disabled />
+                                </th>
+
+                                <th class="notshow">
+                                    <label>priceid</label>
+                                    <input type="text" id="txtpriceid" class="wd-100px" disabled />
+                                </th>
+
+                                <th>
+                                    <label>ADD</label>
+                                    <input type="button" class="btn btn-success" id="btnadd" value="+" />
+                                </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+
+               
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+    @*// Save *@
+    <div class="ibox">
+
+        <div class="ibox-body">
+
+            <div class="txtleft">
+                <table style="width:300px; border:solid 1px black; padding:4px;" class="totaltable">
+                    <tr>
+                        <td>TotamAmt</td>
+                        <td><span id="stotalamt">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Total Discount</td>
+                        <td><span id="sdis">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Tota Gst</td>
+                        <td><span id="sgst">0</span></td>
+                    </tr>
+                    <tr>
+                        <td>Net Amt</td>
+                        <td><span id="snetamt">0</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="txtright">
+                <button class="btn btn-lg btn-primary" id="btnsave"> Save</button>
+
+                <button class="btn btn-lg btn-success" id="btnupdate" style="display:none" > Update</button>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+@section scripts{
+
+   
+
+    <script>
+
+        var url = '';
+        var vtype = 'Sr';
+
+        $(function ()
+        {
+            $("body").addClass('sidebar-mini');
+             
+            url = "@System.Configuration.ConfigurationManager.AppSettings["Url"]";
+
+            var vno = localStorage.getItem('vno');
+            var mode = localStorage.getItem("editmode");
+
+            if (mode == "true")
+            {
+                getbyID(vno, vtype);
+            }
+            else
+            {
+              
+                GenerateNewVno();
+                //bindvendor
+                bindvendor("0");
+            }
+          
+
+            //bindmagazine
+            bindmagzine();
+
+
+
+            // select event Magazine ddl
+            $("#ddlmagzine").change(function () {
+
+                setdefualtvalue();
+                /* alert($('option:selected', this).text());*/
+                var mzid = $("#ddlmagzine").val();
+                bindReleasedMagazine(mzid);
+
+            });
+
+
+            // select event Magazine ddl
+            $("#ddlrelmagazine").change(function ()
+            {
+                var mzid = $("#ddlmagzine").val();
+                var mrid = $("#ddlrelmagazine").val();
+                avlstock(mzid, mrid);
+               
+            });
+
+
+            $(".allow_decimal").on("input", function (evt) {
+                var self = $(this);
+                self.val(self.val().replace(/[^0-9\.]/g, ''));
+                if ((evt.which != 46 || self.val().indexOf('.') != -1) && (evt.which < 48 || evt.which > 57)) {
+                    evt.preventDefault();
+                }
+            });
+
+            //*
+            $(".allow_numeric").on("input", function (evt) {
+                var self = $(this);
+                self.val(self.val().replace(/\D/g, ""));
+                if ((evt.which < 48 || evt.which > 57)) {
+                    evt.preventDefault();
+                }
+            });
+
+
+        })
+        //getvno
+        //function to Get Vno
+        function GenerateNewVno() {
+            $.ajax({
+                type: 'Post',
+                url: url + "/api/Comman/getvno?vtype="+vtype,
+                contentType: "application/json;charset=utf-8",
+                success: function (response)
+                {
+                    var data = response.Data;
+                    $('#txtvno').val(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Errors !");
+                },
+                complete: function () {
+
+                }
+            });
+        }
+        //bindvender
+        function bindvendor(venderid)
+        {
+
+
+
+            $.ajax({
+                url: url + "/api/Comman/bindvendor",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select Vendor</option>';
+                        for (var i = 0; i < data.length; i++)
+                        {
+                            s += '<option value="' + data[i].memberid + '">' + data[i].membername + '</option>';
+                        }
+                        $("#ddlvendor").html(s);
+
+                    }
+
+                    if (venderid.length != "0")
+                    {
+                        $("#ddlvendor").val(venderid);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+        }
+        //bindmagazine
+        function bindmagzine() {
+            cleartrate();
+
+            $.ajax({
+                url: url + "/api/Comman/Magzinebind",
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0) {
+                        var s = '<option value="0">Please Select Magzine</option>';
+                        for (var i = 0; i < data.length; i++) {
+                            s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                        }
+                        $("#ddlmagzine").html(s);
+
+                    }
+
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+        }
+        //bind released Magazine
+        function bindReleasedMagazine(mzid) {
+
+            $("#ddlrelmagazine").html("");
+
+
+            $.ajax({
+                url: url + "/api/Comman/Releasedmagazine?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+
+                    try
+                    {
+                        var data = response.Data;
+                        if (response.Data.length > 0) {
+
+                            var s = '<option value="0">Select released Magzine</option>';
+                            for (var i = 0; i < data.length; i++) {
+                                s += '<option value="' + data[i].MagzineId + '">' + data[i].MagzineName + '</option>';
+                            }
+                            $("#ddlrelmagazine").html(s);
+
+                            bindtenure(mzid);
+                        }
+                        else
+                        {
+                            $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                        }
+                    }
+                    catch (err)
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                    }
+
+
+                },
+                error: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                },
+                failure: function (response) {
+                    $.toast({ heading: 'Warning', text: 'No Record Found ! ', icon: 'warning', position: 'top-right', stack: false });
+
+                }
+            });
+
+        }
+        //bind tenure
+        function bindtenure(mzid)
+        {
+            setdefualtvalue();
+
+
+            $.ajax({
+                url: url + "/api/Comman/Magazinerate?mzid=" + mzid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0)
+                    {
+                        $("#txtrate").val(data[0].Rate);
+                        $("#txtgst").val(data[0].gst);
+                        $("#txtpriceid").val(data[0].PriceId);
+                        
+                        setrate();
+                    }
+                    else
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Ad Hosc(Single Unit) Record Found! ', icon: 'warning', position: 'top-right', stack: false });
+                    }
+
+                },
+                complete: function (response)
+                {
+                   
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+        // set default value
+        function setdefualtvalue()
+        {
+            $("#txtavlstock").val("0");
+            //
+            $("#txtrate").val("");
+            $("#txtqty").val("0");
+            $("#txtdis").val("0");
+            $("#txtdisamt").val("0");
+            $("#txtamt").val("0");
+            $("#txtgst").val("0");
+            $("#txtgstamt").val("0");
+            $("#txtpaybleamt").val("0");
+            $("#txtnetamt").val("0");
+            $("#txtpriceid").val("0");
+
+            
+        }
+        // avl stock
+        function avlstock(mzid, mrid)
+        {
+
+            $("#txtavlstock").val("0");
+
+            $.ajax({
+                url: url + "/api/Comman/Magazineavlstock?mzid=" + mzid + "&mrid=" + mrid,
+                dataType: "json",
+                type: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    var data = response.Data;
+                    if (response.Data.length > 0)
+                    {
+                       
+                        if (data[0].stock != "")
+                        {
+                            $("#txtavlstock").val(data[0].stock);
+                        }
+                        else
+                        {
+                            $.toast({ heading: 'Warning', text: 'No Stock Avalable', icon: 'warning', position: 'top-right', stack: false });
+
+                        }
+                    }
+                    else
+                    {
+                        $.toast({ heading: 'Warning', text: 'No Stock Avalable', icon: 'warning', position: 'top-right', stack: false });
+                    }
+
+                },
+                error: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                },
+                failure: function (response) {
+                    response([{ label: 'No results found.', value: "" }]);
+                }
+            });
+
+        }
+        // serrate
+        function setrate()
+        {
+            
+         var stock = $("#txtavlstock").val();
+         var rate =  $("#txtrate").val();
+         var qty =   $("#txtqty").val();
+         var dis = $("#txtdis").val();
+         var disamt = $("#txtdisamt").val();
+         var amt =   $("#txtamt").val();
+         var gstper =   $("#txtgst").val();
+         var gstamt = $("#txtgstamt").val();
+         var paybleamt = $("#txtpaybleamt").val();
+         var netamt =  $("#txtnetamt").val();
+
+
+            //check qty
+            //if (parseInt(stock) < parseInt(qty))
+            //{
+            //      $.toast({ heading: 'Warning', text: 'Qty not more than curret stock', icon: 'warning', position: 'top-right', stack: false });
+            //      $("#txtqty").val("0");
+            //      setrate();
+            //      return false;
+            //}
+       
+            //amount
+            amt = parseFloat(rate * qty);
+            $("#txtamt").val(amt);
+
+            //discount amt
+            disamt = parseFloat((amt * dis) / 100);
+            $("#txtdisamt").val(disamt);
+
+            //gst
+
+
+            //calculate
+            var g = (gstper / 100);
+            var g2 = (parseFloat(amt - disamt) / parseFloat(1 + g));
+            totalgst = parseFloat(amt - disamt) - g2;
+            $('#txtgstamt').val(totalgst.toFixed(2));
+
+            // payble amt
+            paybleamt = parseFloat(amt.toFixed(2) - disamt.toFixed(2)) - parseFloat(totalgst.toFixed(2))
+            $('#txtpaybleamt').val(paybleamt);
+
+            // net amt
+            netamt = parseFloat(paybleamt.toFixed(2)) + parseFloat(totalgst.toFixed(2));
+            $("#txtnetamt").val(netamt);
+
+            //$('#txtamt').val(amt);
+            //$('#txtpaybleamt').val(rate);
+
+
+
+
+
+
+        }
+        //calculate gst
+        function calculategst() {
+            var rate = $("#txtrate").val();
+            var gst = $("#txtgst").val();
+            var dis = $("#txtdiscount").val();
+            var disamt = parseFloat((rate * dis) / 100);
+            var newrate = parseFloat(rate - disamt);
+
+            //calculate
+            var totalgst = parseFloat((newrate * gst) / 100);
+            $('#txtgstamt').val(parseFloat(totalgst).toFixed(2));
+            $('#txtamt').val(parseFloat(newrate - totalgst).toFixed(2));
+            $('#txtpaybleamt').val(newrate);
+            $('#txtnetamt').val(newrate);
+            $('#txtdiscountamt').val(disamt);
+
+
+
+
+
+        }
+        // clearrate
+        function cleartrate()
+        {
+           
+            $("txtrate").val();
+            $("txtdiscount").val();
+            $("txtgst").val();
+            $("txtpybleamt").val();
+
+        }
+        // add row in table
+        $("#btnadd").on("click", function ()
+        {
+            if (validation() == false)
+            {
+                return false;
+            }
+            
+            var rw = "";
+            rw += "<tr>";
+            rw += "<td class='notshow'>" + $("#ddlmagzine").val() + "</td>";
+            rw += "<td>" + $("#ddlmagzine option:selected").text() + "</td>";
+            rw += "<td class='notshow'>" + $("#ddlrelmagazine").val() + "</td>";
+            rw += "<td>" + $("#ddlrelmagazine option:selected").text() + "</td>";
+            rw += "<td>" + $("#txtavlstock").val() + "</td>";
+            rw += "<td>" + $("#txtrate").val() + "</td>";
+            rw += "<td>" + $("#txtqty").val() + "</td>";
+            rw += "<td>" + $("#txtamt").val() + "</td>";
+            rw += "<td>" + $("#txtdis").val() + "</td>";
+            rw += "<td>" + $("#txtdisamt").val() + "</td>";
+            rw += "<td>" + $("#txtgst").val() + "</td>";
+            rw += "<td>" + $("#txtgstamt").val() + "</td>";
+            rw += "<td>" + $("#txtpaybleamt").val() + "</td>";
+            rw += "<td>" + $("#txtnetamt").val() + "</td>";
+            rw += "<td class='notshow'>" + $("#txtpriceid").val() + "</td>";
+            rw += '<td><input type="button" class="btn btn-danger" id="btnremove" value="-" onclick="tblremocerow(this)" /></td>';
+            rw += "</tr>";
+
+            $("#tbl_master tbody").append(rw);
+
+            settotaltable();
+           
+        })
+
+
+        function tblremocerow(this1)
+        {
+            $(this1).closest("tr").remove();
+
+            settotaltable();
+        }
+
+        function settotaltable()
+        {
+            var t = "";
+            var d = "";
+            var g = "";
+            var n = "";
+
+            $('#tbl_master tbody tr').each(function (i) {
+                var row = $(this);
+
+                t += row.find("td").eq(12).html();
+                d += row.find("td").eq(9).html();
+                g += row.find("td").eq(11).html();
+                n += row.find("td").eq(13).html();
+
+            })
+
+            $("#stotalamt").html(t);
+            $("#sdis").html(d);
+            $("#sgst").html(g);
+            $("#snetamt").html(n);
+        }
+
+        //validation
+        function validation()
+        {
+            var isValid = true;
+
+
+            //select magazine
+            if ($("#ddlmagzine").val() == "0")
+            {
+                $.toast({
+                    heading: 'Warning', text: 'Select Magazine', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                isValid = false;
+            }
+
+            //select magazine
+            if ($("#ddlrelmagazine").val() == "0")
+            {
+                $.toast({
+                    heading: 'Warning', text: 'Select Released Magazine', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                isValid = false;
+            }
+
+            //Qty
+            if ($("#txtqty").val() == "0") {
+                $.toast({
+                    heading: 'Warning', text: 'Qty is greather then 0', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                    stack: false
+                });
+                isValid = false;
+            }
+
+
+            //---check table dublicacy
+            $('#tbl_master tbody tr').each(function (i)
+            {
+                var row = $(this);
+                var mzid = row.find("td").eq(0).html();
+                var mrid = row.find("td").eq(2).html();
+
+
+                if (mzid == $("#ddlmagzine").val() && mrid == $("#ddlrelmagazine").val())
+                {
+                    $.toast({
+                        heading: 'Warning', text: 'Dublicate Entry Not Allowed', showHideTransition: 'fade', icon: 'warning', position: 'top-right',
+                        stack: false
+                    });
+                    $(row).addClass("bgred");
+                    isValid = false;
+
+                }
+
+            })
+            //---check table dublicacy
+            return isValid;
+
+
+        }
+
+
+
+        // btn save
+        $("#btnsave").on('click', function ()
+        {
+
+            var Delivery = DataObj();
+            var chklength = Delivery.length;
+           
+            if (chklength == "0")
+            {
+                $.toast({ heading: 'Warning', text: 'Enter at Lest one Entry ! ', icon: 'success', position: 'top-right', stack: false });
+                return false;
+            }
+
+            $.ajax({
+                url: url + "/api/DeliveryApi/Add",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(Delivery),
+                success: function (response) {
+                    if (response.Result == 'True')
+                    {
+                        $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+                        location.href = "Index";
+                    }
+                    else {
+                        $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+
+                    }
+                },
+                error: function (response) {
+
+                }
+            });
+
+
+
+
+
+        })
+
+        //
+        function DataObj() {
+
+            var Deliver = new Array();
+            var vender = $("#ddlvendor").val().split("-");
+            var msid = vender[0];
+            var mscode = vender[1];
+            var totalamt = "";
+            
+
+            $('#tbl_master tbody tr').each(function (i)
+            {
+                var row = $(this);
+
+                    var Delivery = {};
+                    Delivery.vno = $("#txtvno").val();// transaction Type
+                    Delivery.mzid = row.find("td").eq(0).html();
+                    Delivery.mzname = row.find("td").eq(1).html();
+                    Delivery.mrid = row.find("td").eq(2).html();
+                    Delivery.mrname = row.find("td").eq(3).html();
+                    Delivery.cid = "0";
+                    Delivery.sid = "0";
+                    Delivery.cityid = "0";
+                    Delivery.areaid = "0";
+
+                    Delivery.msid = msid;
+                    Delivery.mscode = mscode;
+
+                    Delivery.priceid = row.find("td").eq(14).html();// priceid
+
+                    Delivery.rate = row.find("td").eq(5).html();// rate
+                    Delivery.qty = row.find("td").eq(6).html();// qty
+                    Delivery.amt = row.find("td").eq(7).html();// amt
+                    Delivery.dis = row.find("td").eq(8).html();// dis
+                    Delivery.disamt = row.find("td").eq(9).html();// disamt
+                    Delivery.gst = row.find("td").eq(10).html();// gst
+                    Delivery.gstamt = row.find("td").eq(11).html();// gstamt
+                    Delivery.paybleamt = row.find("td").eq(12).html();// paybltamt
+                    Delivery.netamt = row.find("td").eq(13).html();// netamt
+                    Delivery.trantype = $("#ddltrantype").val();// transaction Type
+
+                    Delivery.vtype = vtype;
+                    Delivery.vdate = $("#txtdate").val();
+                    Delivery.totalamt = totalamt += row.find("td").eq(13).html();
+                    Deliver.push(Delivery);
+
+            })
+
+            return Deliver;
+        }
+
+
+        //get recordes
+        //Function for getting the Data Based upon ID
+        function getbyID(vno, vtype) {
+            $.ajax({
+                url: url + "/api/DeliveryApi/GetSaleEntryRecords?vno=" + vno + "&vtype=" + vtype,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result)
+                {
+                    console.log(result.Data)
+
+                    if (result.Status == true)
+                    {
+                        var data = result.Data;
+                        
+                        $('#txtvno').val(data[0].vno);
+                        $('#txtdate').val(data[0].vdate);
+                        $('#ddltrantype').val(data[0].trantype);
+                        bindvendor(data[0].msid);
+
+                      
+                        for (i = 0; i < data.length; i++)
+                        {
+                           
+                            var tr = "<tr>";
+                            tr += "<td class='notshow'>" + data[0].mzid + "</td>";
+                            tr += "<td>" + data[0].mzname + "</td>";
+                            tr += "<td class='notshow'>" + data[0].mrid + "</td>";
+                            tr += "<td>" + data[0].mrname + "</td>";
+                            tr += "<td>-</td>";
+                            tr += "<td>" + data[0].rate + "</td>";
+                            tr += "<td>" + data[0].qty + "</td>";
+                            tr += "<td>" + data[0].amt + "</td>";
+                            tr += "<td>" + data[0].dis + "</td>";
+                            tr += "<td>" + data[0].disamt + "</td>";
+                            tr += "<td>" + data[0].gst + "</td>";
+                            tr += "<td>" + data[0].gstamt + "</td>";
+                            tr += "<td>" + data[0].paybleamt + "</td>";
+                            tr += "<td>" + data[0].netamt + "</td>";
+                            tr += "<td class='notshow'>" + data[0].priceid + "</td>";
+                            tr+= '<td><input type="button" class="btn btn-danger" id="btnremove" value="-" onclick="tblremocerow(this)" /></td>';
+                            tr += "</tr>";
+                            tr += "</tr>";
+
+                            $("#tbl_master tbody").append(tr);
+                        }
+
+                        $('.mgheader').html('Edit New Sale Return');
+                        $('#btnupdate').show();
+                        $('#btnsave').hide();
+                        localStorage.setItem('vno', "");
+                        localStorage.setItem('editmode', false); //GetURLParameter();
+
+                        settotaltable();
+                    }
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+        //btnupdate
+        // btn save
+        $("#btnupdate").on('click', function () {
+
+            var Delivery = DataObj();
+            var chklength = Delivery.length;
+
+            if (chklength == "0")
+            {
+                $.toast({ heading: 'Warning', text: 'Enter at Lest one Entry ! ', icon: 'success', position: 'top-right', stack: false });
+                return false;
+            }
+
+            $.ajax({
+                url: url + "/api/DeliveryApi/Update",
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(Delivery),
+                success: function (response) {
+                    if (response.Result == 'True') {
+                        $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+                        location.href = "Index";
+                    }
+                    else {
+                        $.toast({ heading: 'Warning', text: response.Message, icon: 'success', position: 'top-right', stack: false });
+
+                    }
+                },
+                error: function (response) {
+
+                }
+            });
+
+
+
+
+
+        })
+       
+    </script>
+}
+
+
+

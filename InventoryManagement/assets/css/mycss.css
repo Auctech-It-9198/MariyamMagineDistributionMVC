@@ -1,0 +1,274 @@
+﻿.imgdiv {
+    width: 50%;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+.imguploadctrl {
+    top: 15px;
+    position: relative;
+}
+
+.comman {
+    margin: 0;
+    padding: 0;
+}
+
+.hidecolumn {
+    display: none;
+}
+
+a.edit {
+    font-size: 22px;
+}
+
+a.delete i {
+    font-size: 22px;
+    color: red;
+}
+
+.entrygrid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    /* Zebra striping */
+    .entrygrid tr:nth-of-type(odd) {
+        background: #eee;
+    }
+
+    .entrygrid th {
+        background: #34495f !important;
+        color: white !important;
+        font-weight: bold !important;
+        padding: 10px !important;
+        border: 1px solid lightgray !important;
+        text-align: center !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+
+    .entrygrid td {
+        border: 1px solid lightgray;
+        text-align: center;
+        padding: 10px !important;
+    }
+
+        .entrygrid td:first-child, entrygrid th:first-child {
+            text-align: left!important;
+            padding-left: 10px!important;
+        }
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    .entrygrid {
+        width: 100%;
+    }
+
+        /* Force table to not be like tables anymore */
+        .entrygrid, .entrygrid thead, .entrygrid tbody, .entrygrid th, .entrygrid td, .entrygrid tr {
+            display: block;
+        }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .entrygrid tr {
+        border: 1px solid #ccc;
+    }
+
+    .entrygrid td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+        .entrygrid td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            /* Label the data */
+            content: attr(data-column);
+            color: #000;
+            font-weight: bold;
+        }
+}
+
+.Pager {
+    text-align: right;
+}
+
+    .Pager b {
+        float: left;
+    }
+
+    .Pager a:nth-child(1) {
+        background-color: red;
+    }
+
+    .Pager span {
+        text-align: center !important;
+        color: white !important;
+        display: inline-block !important;
+        min-width: 34px !important;
+        background-color: #1b1e24 !important;
+        margin-right: 3px !important;
+        line-height: 200% !important;
+        border: 1px solid #1b1e24 !important;
+        font-weight: bolder !important;
+        border-radius: 3px !important;
+        padding: 3px !important;
+    }
+
+    .Pager a {
+        text-align: center;
+        display: inline-block !important;
+        min-width: 30px !important;
+        background-color: white !important;
+        color: gray !important;
+        border: 1px solid lightgray !important;
+        margin-right: 3px !important;
+        line-height: 200% !important;
+        text-decoration: none !important;
+        border-radius: 3px !important;
+        padding: 3px !important;
+    }
+
+    .Pager span:last-child {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+/*Displays UP arrow*/
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid black;
+    display: inline-block;
+}
+
+/*Displays DOWN arrow*/
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid black;
+    display: inline-block;
+}
+
+.highlight {
+    background-color: #FFFFAF;
+}
+
+.displaythtd {
+    display: none;
+}
+/*--------------------------------*/
+.centered {
+    text-align: center;
+}
+
+.imgdiv {
+    width: 100% !important;
+}
+
+.entrygrid td:first-child {
+    text-align: left;
+    padding-left: 0px;
+}
+
+.entrygrid th {
+    padding: 0px;
+    margin: 0px;
+}
+
+button {
+    margin-right: 5px;
+}
+
+#loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin-left: 550px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*.zoom:hover {
+             -webkit-transform: scale(5.2);
+             -moz-transform: scale(5.2);
+             -o-transform: scale(5.2);
+             -ms-transform: scale(5.2);
+             transform: scale(5.2);
+             border: none;
+             z-index:9999;
+         }*/
+#content {
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 26px;
+}
+
+.showHideColumn {
+    cursor: pointer;
+    color: blue;
+}
+
+.dataTables_scrollHeadInner {
+    width: 100% !important;
+}
+
+    .dataTables_scrollHeadInner table {
+        width: 100% !important;
+    }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #253544;
+}
+.modal-header {
+            cursor: move;
+        }
